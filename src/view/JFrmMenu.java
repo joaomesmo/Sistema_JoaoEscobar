@@ -4,6 +4,9 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Caio
@@ -15,6 +18,9 @@ public class JFrmMenu extends javax.swing.JFrame {
      */
     public JFrmMenu() {
         initComponents();
+        setTitle("Menu Principal");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        ImageIcon icon = new ImageIcon("src/img/deltarune.jpg");
     }
 
     /**

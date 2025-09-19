@@ -18,6 +18,12 @@ public class JDlgClientes extends javax.swing.JDialog {
     public JDlgClientes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setTitle("Cadastro de Clientes");
+        setLocationRelativeTo(null);
+        
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
+            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxaBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }
 
     /**

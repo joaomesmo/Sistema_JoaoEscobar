@@ -18,6 +18,12 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
     public JDlgPublicadoras(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setTitle("Cadastro de Publicadoras");
+        setLocationRelativeTo(null);
+        
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jFmtCriadoEm,  jPswSenha, jCbxStatus, jFmtEmail,
+            jFmtTelefone,  jFmtSeed,jTxtDescricao, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }
 
     /**
