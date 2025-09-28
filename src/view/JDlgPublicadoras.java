@@ -50,7 +50,7 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
         jFmtTelefone = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         jTxtNome = new javax.swing.JTextField();
-        jCbxStatus = new javax.swing.JComboBox<>();
+        jCbxStatus = new javax.swing.JComboBox<String>();
         jPswSenha = new javax.swing.JPasswordField();
         jTxtDescricao = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -123,11 +123,6 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
 
         jTxtCodigo.setBackground(new java.awt.Color(102, 102, 102));
         jTxtCodigo.setForeground(new java.awt.Color(204, 204, 204));
-        jTxtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtCodigoActionPerformed(evt);
-            }
-        });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,7 +144,7 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
 
         jCbxStatus.setBackground(new java.awt.Color(102, 102, 102));
         jCbxStatus.setForeground(new java.awt.Color(204, 204, 204));
-        jCbxStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ativa", "falida", "fechada" }));
+        jCbxStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ativa", "falida", "fechada" }));
 
         jPswSenha.setBackground(new java.awt.Color(102, 102, 102));
         jPswSenha.setForeground(new java.awt.Color(204, 204, 204));
@@ -330,10 +325,6 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
             jFmtTelefone,  jFmtSeed,jTxtDescricao, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
-
-    private void jTxtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtCodigoActionPerformed
 
     /**
      * @param args the command line arguments
