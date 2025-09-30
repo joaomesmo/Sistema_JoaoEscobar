@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import pesquisas.JDlgVendasPesquisar;
 import tools.Util;
 
 /**
@@ -300,7 +301,10 @@ public class JDlgVendas extends javax.swing.JDialog {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        Util.mensagem("num tem");
+        JDlgVendasPesquisar jDlgVendasPesquisar = new JDlgVendasPesquisar(null, true);
+        jDlgVendasPesquisar.setTelaPai(this);
+        jDlgVendasPesquisar.setVisible(true);
+        Util.mensagem("omagah");
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     /**

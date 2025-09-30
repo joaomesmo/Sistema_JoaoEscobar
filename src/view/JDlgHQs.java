@@ -4,6 +4,7 @@
  */
 package view;
 
+import pesquisas.JDlgHQsPesquisar;
 import tools.Util;
 
 /**
@@ -279,6 +280,9 @@ public class JDlgHQs extends javax.swing.JDialog {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
+        JDlgHQsPesquisar jDlgHQsPesquisar = new JDlgHQsPesquisar(null, true);
+        jDlgHQsPesquisar.setTelaPai(this);
+        jDlgHQsPesquisar.setVisible(true);
         Util.mensagem("num tem");
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 

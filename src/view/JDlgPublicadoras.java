@@ -4,6 +4,7 @@
  */
 package view;
 
+import pesquisas.JDlgPublicadorasPesquisar;
 import tools.Util;
 
 /**
@@ -286,7 +287,10 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        Util.mensagem("num tem");
+        JDlgPublicadorasPesquisar jDlgPublicadorasPesquisar = new JDlgPublicadorasPesquisar(null, true);
+        jDlgPublicadorasPesquisar.setTelaPai(this);
+        jDlgPublicadorasPesquisar.setVisible(true);
+        Util.mensagem("num tem ainda");
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed

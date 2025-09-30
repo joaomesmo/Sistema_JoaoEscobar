@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import pesquisas.JDlgClientesPesquisar;
 import tools.Util;
 
 /**
@@ -434,7 +435,10 @@ public class JDlgClientes extends javax.swing.JDialog {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        Util.mensagem("num tem");
+        JDlgClientesPesquisar jDlgClientesPesquisar = new JDlgClientesPesquisar(null, true);
+        jDlgClientesPesquisar.setTelaPai(this);
+        jDlgClientesPesquisar.setVisible(true);
+        Util.mensagem("seleciono nada tio");
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     /**
