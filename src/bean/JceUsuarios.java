@@ -19,7 +19,6 @@ import javax.persistence.TemporalType;
 )
 public class JceUsuarios  implements java.io.Serializable {
 
-
      private int jceIdusuarios;
      private String jceNome;
      private String jceApelido;

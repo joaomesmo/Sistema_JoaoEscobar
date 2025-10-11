@@ -4,6 +4,7 @@
  */
 package view;
 
+import bean.JceUsuarios;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,6 +42,8 @@ public class JDlgUsuarios extends javax.swing.JDialog {
                jCboNivel,  jChbAtivo,  jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir, jBtnAlterar,  jBtnPesquisar);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
