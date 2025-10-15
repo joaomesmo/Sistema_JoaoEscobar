@@ -22,7 +22,7 @@ public class JceHqs  implements java.io.Serializable {
 
      private int jceIdhqs;
      private String jceNome;
-     private double jceCapitulos;
+     private int jceCapitulos;
      private String jceGenero;
      private Date jceLancamento;
      private String jceCriador;
@@ -33,14 +33,14 @@ public class JceHqs  implements java.io.Serializable {
     }
 
 	
-    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceCriador, String jceEstudio) {
+    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceCriador, String jceEstudio) {
         this.jceIdhqs = jceIdhqs;
         this.jceNome = jceNome;
         this.jceCapitulos = jceCapitulos;
         this.jceCriador = jceCriador;
         this.jceEstudio = jceEstudio;
     }
-    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jceEstudio, String jceTags) {
+    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jceEstudio, String jceTags) {
        this.jceIdhqs = jceIdhqs;
        this.jceNome = jceNome;
        this.jceCapitulos = jceCapitulos;
@@ -79,7 +79,7 @@ public class JceHqs  implements java.io.Serializable {
         return this.jceCapitulos;
     }
     
-    public void setJceCapitulos(double jceCapitulos) {
+    public void setJceCapitulos(int jceCapitulos) {
         this.jceCapitulos = jceCapitulos;
     }
 
@@ -137,5 +137,3 @@ public class JceHqs  implements java.io.Serializable {
 
 
 }
-
-

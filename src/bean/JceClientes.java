@@ -30,11 +30,11 @@ public class JceClientes  implements java.io.Serializable {
      private Date jceDatanasc;
      private String jceTelefone;
      private String jceLocalizacao;
-     private Integer jceAvatar;
+     private int jceAvatar;
      private String jceStatus;
      private String jceGenero;
-     private String jceRank;
-     private Double jceDinheiroGasto;
+     private String jceBio;
+     private int jceGasto;
      private JceVendas jceVendas;
 
     public JceClientes() {
@@ -48,7 +48,7 @@ public class JceClientes  implements java.io.Serializable {
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceDatanasc, String jceTelefone, String jceLocalizacao, Integer jceAvatar, String jceStatus, String jceGenero, String jceRank, Double jceDinheiroGasto, JceVendas jceVendas) {
+    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceDatanasc, String jceTelefone, String jceLocalizacao, int jceAvatar, String jceStatus, String jceGenero, String jceBio, int jceGasto, JceVendas jceVendas) {
        this.idjceClientes = idjceClientes;
        this.jceNome = jceNome;
        this.jceApelido = jceApelido;
@@ -60,8 +60,8 @@ public class JceClientes  implements java.io.Serializable {
        this.jceAvatar = jceAvatar;
        this.jceStatus = jceStatus;
        this.jceGenero = jceGenero;
-       this.jceRank = jceRank;
-       this.jceDinheiroGasto = jceDinheiroGasto;
+       this.jceBio = jceBio;
+       this.jceGasto = jceGasto;
        this.jceVendas = jceVendas;
     }
    
@@ -149,11 +149,11 @@ public class JceClientes  implements java.io.Serializable {
 
     
     @Column(name="jce_avatar")
-    public Integer getJceAvatar() {
+    public int getJceAvatar() {
         return this.jceAvatar;
     }
     
-    public void setJceAvatar(Integer jceAvatar) {
+    public void setJceAvatar(int jceAvatar) {
         this.jceAvatar = jceAvatar;
     }
 
@@ -180,21 +180,21 @@ public class JceClientes  implements java.io.Serializable {
     
     @Column(name="jce_rank", length=5)
     public String getJceRank() {
-        return this.jceRank;
+        return this.jceBio;
     }
     
-    public void setJceRank(String jceRank) {
-        this.jceRank = jceRank;
+    public void setJceRank(String jceBio) {
+        this.jceBio = jceBio;
     }
 
     
     @Column(name="jce_dinheiroGasto", precision=22, scale=0)
-    public Double getJceDinheiroGasto() {
-        return this.jceDinheiroGasto;
+    public int getJceDinheiroGasto() {
+        return this.jceGasto;
     }
     
-    public void setJceDinheiroGasto(Double jceDinheiroGasto) {
-        this.jceDinheiroGasto = jceDinheiroGasto;
+    public void setJceDinheiroGasto(int jceGasto) {
+        this.jceGasto = jceGasto;
     }
 
 @OneToOne(fetch=FetchType.LAZY, mappedBy="jceClientes")

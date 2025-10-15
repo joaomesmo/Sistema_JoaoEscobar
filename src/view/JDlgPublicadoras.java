@@ -4,6 +4,7 @@
  */
 package view;
 
+import bean.JcePublicadoras;
 import pesquisas.JDlgPublicadorasPesquisar;
 import tools.Util;
 
@@ -25,6 +26,35 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
         Util.habilitar(false, jTxtCodigo, jTxtNome, jFmtCriadoEm,  jPswSenha, jCbxStatus, jFmtEmail,
             jFmtTelefone,  jFmtSeed,jTxtDescricao, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
+    }
+    
+    public JcePublicadoras viewBean() {
+        JcePublicadoras jcepublicadoras = new JcePublicadoras();
+        //usuarios.setIdusuarios(Util.strToInt( jTxtCodigo.getText() ));
+        int codigo = Util.strToInt(jTxtCodigo.getText());
+        jcepublicadoras.setJceIdpublicadoras(codigo);
+        jcepublicadoras.setJceNome(jTxtNome.getText());
+        jcepublicadoras.setJceCriadaEm(Util.strToDate(jFmtCriadoEm.getText()));
+        jcepublicadoras.setJceStatus(jCbxStatus.getSelectedIndex());
+        jcepublicadoras.setJceEmail(jFmtEmail.getText());
+        jcepublicadoras.setJceSenha(jPswSenha.getText());
+        jcepublicadoras.setJceTelefone(jFmtTelefone.getText());
+        jcepublicadoras.setJceSeed(jFmtSeed.getText());
+        jcepublicadoras.setJceDescricao(jTxtDescricao.getText());
+        return jcepublicadoras;
+    }
+
+    public void beanView(JcePublicadoras jcepublicadoras) {
+        String codigo = String.valueOf(jcepublicadoras.getJceIdpublicadoras());
+        jTxtCodigo.setText(codigo);
+        jTxtNome.setText(jcepublicadoras.getJceNome());
+        jFmtCriadoEm.setText(Util.dateToStr(jcepublicadoras.getJceCriadaEm()));
+        jCbxStatus.setSelectedIndex(jcepublicadoras.getJceStatus());
+        jFmtEmail.setText(jcepublicadoras.getJceEmail());
+        jPswSenha.setText(jcepublicadoras.getJceSenha());
+        jFmtTelefone.setText(jcepublicadoras.getJceTelefone());
+        jFmtSeed.setText(jcepublicadoras.getJceSeed());
+        jTxtDescricao.setText(jcepublicadoras.getJceDescricao());
     }
 
     /**

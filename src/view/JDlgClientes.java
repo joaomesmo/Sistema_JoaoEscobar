@@ -4,6 +4,7 @@
  */
 package view;
 
+import bean.JceClientes;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,8 +37,41 @@ public class JDlgClientes extends javax.swing.JDialog {
         }
         
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
-            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxaBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
+    }
+    
+    public JceClientes viewBean() {
+        JceClientes jceclientes = new JceClientes();
+        int codigo = Util.strToInt(jTxtCodigo.getText());
+        jceclientes.setIdjceClientes(codigo);
+        jceclientes.setJceNome(jTxtNome.getText());
+        jceclientes.setJceApelido(jTxtApelido.getText());
+        //jceclientes.setJceStatus(jCboStatus.getSelectedIndex());
+        jceclientes.setJceDatanasc(Util.strToDate(jFmtDatanasc.getText()));   
+        jceclientes.setJceSenha(jPwfSenha.getText());
+        //jceclientes.setJceGenero(jCboGenero.getSelectedIndex());
+        jceclientes.setJceTelefone(jFmtTelefone.getText());
+        jceclientes.setJceLocalizacao(jFmtLocalizacao.getText());
+        //jceclientes.setJceGasto(jFmtGasto.getText());
+        //jceclientes.setJceBio(jTxtBio.getText());
+        return jceclientes;
+    }
+
+        public void beanView(JceClientes jceclientes) {
+        String codigo = String.valueOf(jceclientes.getIdjceClientes());
+        jTxtCodigo.setText(codigo);
+        jTxtNome.setText(jceclientes.getJceNome());
+        jTxtApelido.setText(jceclientes.getJceApelido());
+        //jCboStatus.setSelectedIndex(jceclientes.getJceStatus());
+        jFmtEmail.setText(jceclientes.getJceEmail());
+        //jPwfSenha.setText(jceclientes.getJceSenha());
+        //jCboGenero.setSelectedIndex(jceclientes.getJceGenero());
+        jFmtDatanasc.setText(Util.dateToStr(jceclientes.getJceDatanasc()));
+        jFmtTelefone.setText(jceclientes.getJceTelefone());
+        //String gasto = String.valueOf(jceclientes.getJce);
+        //jFmtGasto.setText(gasto);
+        //jTxtBio.setText(jceclientes.getJce());
     }
 
     /**
@@ -69,8 +103,6 @@ public class JDlgClientes extends javax.swing.JDialog {
         jLabel19 = new javax.swing.JLabel();
         jFmtDatanasc = new javax.swing.JFormattedTextField();
         jLabel23 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTxaBio = new javax.swing.JTextArea();
         jLabel33 = new javax.swing.JLabel();
         jFmtTelefone = new javax.swing.JFormattedTextField();
         jTxtApelido = new javax.swing.JTextField();
@@ -83,6 +115,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jLabel25 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        jTxtBio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -180,12 +213,6 @@ public class JDlgClientes extends javax.swing.JDialog {
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("avatar");
-
-        jTxaBio.setBackground(new java.awt.Color(102, 102, 102));
-        jTxaBio.setColumns(20);
-        jTxaBio.setForeground(new java.awt.Color(204, 204, 204));
-        jTxaBio.setRows(5);
-        jScrollPane1.setViewportView(jTxaBio);
 
         jLabel33.setBackground(new java.awt.Color(255, 255, 255));
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
@@ -292,21 +319,24 @@ public class JDlgClientes extends javax.swing.JDialog {
                                     .addComponent(jFmtGasto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(132, 132, 132))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jFmtDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel25)
-                                    .addComponent(jFmtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel31)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jFmtLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 4, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jTxtBio))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel26)
+                                            .addComponent(jFmtDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel25)
+                                            .addComponent(jFmtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel31)
+                                            .addComponent(jFmtLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 4, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -369,7 +399,7 @@ public class JDlgClientes extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTxtBio, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnIncluir)
@@ -406,14 +436,14 @@ public class JDlgClientes extends javax.swing.JDialog {
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
-            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxaBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
-            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxaBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
         Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido, jFmtTelefone);
         Util.perguntar("excluir?");
@@ -422,14 +452,14 @@ public class JDlgClientes extends javax.swing.JDialog {
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jTxtAvatar, jFmtDatanasc,
-            jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtGasto,jTxaBio,jBtnIncluir, jBtnAlterar);
+            jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtGasto,jTxtBio,jBtnIncluir, jBtnAlterar);
         Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
         Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jTxtAvatar, jFmtDatanasc,
-            jPwfSenha, jFmtTelefone,  jFmtLocalizacao,jTxaBio, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
+            jPwfSenha, jFmtTelefone,  jFmtLocalizacao,jTxtBio, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
@@ -512,10 +542,9 @@ public class JDlgClientes extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPwfSenha;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTxaBio;
     private javax.swing.JTextField jTxtApelido;
     private javax.swing.JTextField jTxtAvatar;
+    private javax.swing.JTextField jTxtBio;
     private javax.swing.JTextField jTxtCodigo;
     private javax.swing.JTextField jTxtNome;
     // End of variables declaration//GEN-END:variables

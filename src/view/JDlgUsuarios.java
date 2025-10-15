@@ -49,10 +49,10 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         int codigo = Util.strToInt(jTxtCodigo.getText());
         jceusuarios.setJceIdusuarios(codigo);
         jceusuarios.setJceNome(jTxtNome.getText());
-        jceusuarios.getJceApelido(jTxtApelido.getText());
+        jceusuarios.setJceApelido(jTxtApelido.getText());
         jceusuarios.setJceCpf(jFmtCPF.getText());
         jceusuarios.setJceDataNascimento(Util.strToDate(jFmtDatanasc.getText()));
-        jceusuarios.getJceSenha(jPswSenha.getText());
+        jceusuarios.setJceSenha(jPswSenha.getText());
         jceusuarios.setJceNivel(jCboNivel.getSelectedIndex());
         if (jChbAtivo.isSelected() == true) {
             jceusuarios.setJceAtivo("S");
@@ -63,15 +63,15 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     }
 
     public void beanView(JceUsuarios jceusuarios) {
-        jTxtCodigo.setText(Util.intToStr(jceusuarios.getIdusuarios()));
-        jTxtNome.setText(jceusuarios.getNome());
-        jTxtApelido.setText(jceusuarios.getApelido());
-        jFmtCPF.setText(jceusuarios.getCpf());
-        jFmtDatanasc.setText(Util.dateToStr(jceusuarios.getDataNascimento()));
-        jPswSenha.setText(usuarijceusuariosos.getSenha());
-        jCboNivel.setSelectedIndex(jceusuarios.getNivel());
+        jTxtCodigo.setText(Util.intToStr(jceusuarios.getJceIdusuarios()));
+        jTxtNome.setText(jceusuarios.getJceNome());
+        jTxtApelido.setText(jceusuarios.getJceApelido());
+        jFmtCPF.setText(jceusuarios.getJceCpf());
+        jFmtDatanasc.setText(Util.dateToStr(jceusuarios.getJceDataNascimento()));
+        jPswSenha.setText(jceusuarios.getJceSenha());
+        jCboNivel.setSelectedIndex(jceusuarios.getJceNivel());
         //jChbAtivo.setSelected(usuarios.getAtivo().equals("S"));
-        if (jceusuarios.getAtivo().equals("S") == true) {
+        if (jceusuarios.getJceAtivo().equals("S") == true) {
             jChbAtivo.setSelected(true);
         } else {
             jChbAtivo.setSelected(false);

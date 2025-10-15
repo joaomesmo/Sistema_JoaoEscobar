@@ -49,7 +49,7 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jTxtNome" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jFmtDatalasncamento" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jFmtDatalancamento" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -123,7 +123,7 @@
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jFmtDatalasncamento" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFmtDatalancamento" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -299,7 +299,7 @@
         <Property name="text" type="java.lang.String" value="estudio"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="jFmtDatalasncamento">
+    <Component class="javax.swing.JFormattedTextField" name="jFmtDatalancamento">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>

@@ -6,6 +6,7 @@ package view;
 
 import pesquisas.JDlgHQsPesquisar;
 import tools.Util;
+import bean.JceHqs;
 
 /**
  *
@@ -22,10 +23,55 @@ public class JDlgHQs extends javax.swing.JDialog {
         setTitle("Cadastro de HQs");
         setLocationRelativeTo(null);
         
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalasncamento,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
             jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }
+    
+    public JceHqs viewBean() {
+        JceHqs jcehqs = new JceHqs();
+        //usuarios.setIdusuarios(Util.strToInt( jTxtCodigo.getText() ));
+        int codigo = Util.strToInt(jTxtCodigo.getText());
+        jcehqs.setJceIdhqs(codigo);
+        jcehqs.setJceNome(jTxtNome.getText());
+        int capituiilo = Util.strToInt(jTxtCapitulos.getText());
+        jcehqs.setJceCapitulos(capituiilo);
+        jcehqs.setJceGenero(jTxtGenero.getText());
+        jcehqs.setJceLancamento(Util.strToDate(jFmtDatalancamento.getText()));
+        jcehqs.setJceCriador(jTxtCriador.getText());
+        jcehqs.setJceEstudio(jTxtEstudio.getText());
+        jcehqs.setJceTags(jTxtTags.getText());
+        return jcehqs;
+    }
+
+    
+    public void beanView(JceHqs jcehqs) {
+        String codigo = String.valueOf(jcehqs.getJceIdhqs());
+        jTxtCodigo.setText(codigo);
+        jTxtNome.setText(jcehqs.getJceNome());
+        String capituiilo = String.valueOf(jcehqs.getJceCapitulos());
+        jTxtCapitulos.setText(capituiilo);
+        jTxtEstudio.setText(jcehqs.getJceEstudio());
+        jTxtGenero.setText(jcehqs.getJceGenero());
+        jFmtDatalancamento.setText(Util.dateToStr(jcehqs.getJceLancamento()));
+        jTxtCriador.setText(jcehqs.getJceCriador());
+        jTxtTags.setText(jcehqs.getJceTags());
+    }
+//    public void beanView(JceHqs jcehqs) {
+//        jTxtCodigo.setText(Util.intToStr(jcehqs.getJceIdusuarios()));
+//        jTxtNome.setText(jcehqs.getJceNome());
+//        jTxtApelido.setText(jcehqs.getJceApelido());
+//        jFmtCPF.setText(jcehqs.getJceCpf());
+//        jFmtDatanasc.setText(Util.dateToStr(jcehqs.getJceDataNascimento()));
+//        jPswSenha.setText(jcehqs.getJceSenha());
+//        jCboNivel.setSelectedIndex(jcehqs.getJceNivel());
+//        //jChbAtivo.setSelected(usuarios.getAtivo().equals("S"));
+//        if (jcehqs.getJceAtivo().equals("S") == true) {
+//            jChbAtivo.setSelected(true);
+//        } else {
+//            jChbAtivo.setSelected(false);
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +95,7 @@ public class JDlgHQs extends javax.swing.JDialog {
         jLabel15 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jFmtDatalasncamento = new javax.swing.JFormattedTextField();
+        jFmtDatalancamento = new javax.swing.JFormattedTextField();
         jTxtCapitulos = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -134,8 +180,8 @@ public class JDlgHQs extends javax.swing.JDialog {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("estudio");
 
-        jFmtDatalasncamento.setBackground(new java.awt.Color(102, 102, 102));
-        jFmtDatalasncamento.setForeground(new java.awt.Color(204, 204, 204));
+        jFmtDatalancamento.setBackground(new java.awt.Color(102, 102, 102));
+        jFmtDatalancamento.setForeground(new java.awt.Color(204, 204, 204));
 
         jTxtCapitulos.setBackground(new java.awt.Color(102, 102, 102));
         jTxtCapitulos.setForeground(new java.awt.Color(204, 204, 204));
@@ -192,7 +238,7 @@ public class JDlgHQs extends javax.swing.JDialog {
                                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jTxtNome)
-                            .addComponent(jFmtDatalasncamento, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jFmtDatalancamento, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel13)
@@ -249,7 +295,7 @@ public class JDlgHQs extends javax.swing.JDialog {
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(jLabel11)
                                     .addGap(28, 28, 28))
-                                .addComponent(jFmtDatalasncamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jFmtDatalancamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(8, 8, 8)
                             .addComponent(jLabel13)
@@ -288,21 +334,21 @@ public class JDlgHQs extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalasncamento,
+        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalancamento,
             jTxtCriador, jTxtEstudio,  jTxtTags, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalasncamento,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalancamento,
             jTxtCriador, jTxtEstudio,  jTxtTags, jBtnIncluir, jBtnAlterar);
         Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalasncamento,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
             jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
         Util.limpar(jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtEstudio);
@@ -311,14 +357,14 @@ public class JDlgHQs extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalasncamento,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
             jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalasncamento,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
             jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
@@ -372,7 +418,7 @@ public class JDlgHQs extends javax.swing.JDialog {
     private javax.swing.JButton jBtnExcluir;
     private javax.swing.JButton jBtnIncluir;
     private javax.swing.JButton jBtnPesquisar;
-    private javax.swing.JFormattedTextField jFmtDatalasncamento;
+    private javax.swing.JFormattedTextField jFmtDatalancamento;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
