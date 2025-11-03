@@ -1,13 +1,15 @@
 package bean;
-// Generated 06/10/2025 10:55:53 by Hibernate Tools 4.3.1
+// Generated 03/11/2025 08:01:43 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,42 +29,41 @@ public class JceClientes  implements java.io.Serializable {
      private String jceApelido;
      private String jceEmail;
      private String jceSenha;
-     private Date jceDatanasc;
+     private Date jceData;
      private String jceTelefone;
      private String jceLocalizacao;
-     private int jceAvatar;
-     private String jceStatus;
-     private String jceGenero;
      private String jceBio;
-     private int jceGasto;
-     private JceVendas jceVendas;
+     private Integer jceStatus;
+     private Integer jceGenero;
+     private String jceGasto;
+     private Set jceVendases = new HashSet(0);
 
     public JceClientes() {
     }
 
 	
-    public JceClientes(int idjceClientes, String jceNome, String jceEmail, String jceSenha, String jceTelefone) {
+    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, String jceTelefone) {
         this.idjceClientes = idjceClientes;
         this.jceNome = jceNome;
+        this.jceApelido = jceApelido;
         this.jceEmail = jceEmail;
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceDatanasc, String jceTelefone, String jceLocalizacao, int jceAvatar, String jceStatus, String jceGenero, String jceBio, int jceGasto, JceVendas jceVendas) {
+    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, Integer jceStatus, Integer jceGenero, String jceGasto, Set jceVendases) {
        this.idjceClientes = idjceClientes;
        this.jceNome = jceNome;
        this.jceApelido = jceApelido;
        this.jceEmail = jceEmail;
        this.jceSenha = jceSenha;
-       this.jceDatanasc = jceDatanasc;
+       this.jceData = jceData;
        this.jceTelefone = jceTelefone;
        this.jceLocalizacao = jceLocalizacao;
-       this.jceAvatar = jceAvatar;
+       this.jceBio = jceBio;
        this.jceStatus = jceStatus;
        this.jceGenero = jceGenero;
-       this.jceBio = jceBio;
        this.jceGasto = jceGasto;
-       this.jceVendas = jceVendas;
+       this.jceVendases = jceVendases;
     }
    
      @Id 
@@ -88,7 +89,7 @@ public class JceClientes  implements java.io.Serializable {
     }
 
     
-    @Column(name="jce_apelido", length=50)
+    @Column(name="jce_apelido", nullable=false, length=50)
     public String getJceApelido() {
         return this.jceApelido;
     }
@@ -118,13 +119,13 @@ public class JceClientes  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name="jce_datanasc", length=10)
-    public Date getJceDatanasc() {
-        return this.jceDatanasc;
+    @Column(name="jce_data", length=10)
+    public Date getJceData() {
+        return this.jceData;
     }
     
-    public void setJceDatanasc(Date jceDatanasc) {
-        this.jceDatanasc = jceDatanasc;
+    public void setJceData(Date jceData) {
+        this.jceData = jceData;
     }
 
     
@@ -148,62 +149,52 @@ public class JceClientes  implements java.io.Serializable {
     }
 
     
-    @Column(name="jce_avatar")
-    public int getJceAvatar() {
-        return this.jceAvatar;
-    }
-    
-    public void setJceAvatar(int jceAvatar) {
-        this.jceAvatar = jceAvatar;
-    }
-
-    
-    @Column(name="jce_status", length=45)
-    public String getJceStatus() {
-        return this.jceStatus;
-    }
-    
-    public void setJceStatus(String jceStatus) {
-        this.jceStatus = jceStatus;
-    }
-
-    
-    @Column(name="jce_genero", length=2)
-    public String getJceGenero() {
-        return this.jceGenero;
-    }
-    
-    public void setJceGenero(String jceGenero) {
-        this.jceGenero = jceGenero;
-    }
-
-    
-    @Column(name="jce_rank", length=5)
-    public String getJceRank() {
+    @Column(name="jce_bio", length=50)
+    public String getJceBio() {
         return this.jceBio;
     }
     
-    public void setJceRank(String jceBio) {
+    public void setJceBio(String jceBio) {
         this.jceBio = jceBio;
     }
 
     
-    @Column(name="jce_dinheiroGasto", precision=22, scale=0)
-    public int getJceDinheiroGasto() {
+    @Column(name="jce_status")
+    public Integer getJceStatus() {
+        return this.jceStatus;
+    }
+    
+    public void setJceStatus(Integer jceStatus) {
+        this.jceStatus = jceStatus;
+    }
+
+    
+    @Column(name="jce_genero")
+    public Integer getJceGenero() {
+        return this.jceGenero;
+    }
+    
+    public void setJceGenero(Integer jceGenero) {
+        this.jceGenero = jceGenero;
+    }
+
+    
+    @Column(name="jce_gasto", length=10)
+    public String getJceGasto() {
         return this.jceGasto;
     }
     
-    public void setJceDinheiroGasto(int jceGasto) {
+    public void setJceGasto(String jceGasto) {
         this.jceGasto = jceGasto;
     }
 
-@OneToOne(fetch=FetchType.LAZY, mappedBy="jceClientes")
-    public JceVendas getJceVendas() {
-        return this.jceVendas;
+@OneToMany(fetch=FetchType.LAZY, mappedBy="jceClientes")
+    public Set getJceVendases() {
+        return this.jceVendases;
     }
     
-    public void setJceVendas(JceVendas jceVendas) {
-        this.jceVendas = jceVendas;
+    public void setJceVendases(Set jceVendases) {
+        this.jceVendases = jceVendases;
     }
 
 

@@ -1,5 +1,5 @@
 package bean;
-// Generated 06/10/2025 10:55:53 by Hibernate Tools 4.3.1
+// Generated 03/11/2025 08:01:43 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -22,32 +22,32 @@ public class JceHqs  implements java.io.Serializable {
 
      private int jceIdhqs;
      private String jceNome;
-     private int jceCapitulos;
+     private double jceCapitulos;
      private String jceGenero;
      private Date jceLancamento;
      private String jceCriador;
-     private String jceEstudio;
+     private String jcePublicadora;
      private String jceTags;
 
     public JceHqs() {
     }
 
 	
-    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceCriador, String jceEstudio) {
+    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceCriador, String jcePublicadora) {
         this.jceIdhqs = jceIdhqs;
         this.jceNome = jceNome;
         this.jceCapitulos = jceCapitulos;
         this.jceCriador = jceCriador;
-        this.jceEstudio = jceEstudio;
+        this.jcePublicadora = jcePublicadora;
     }
-    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jceEstudio, String jceTags) {
+    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags) {
        this.jceIdhqs = jceIdhqs;
        this.jceNome = jceNome;
        this.jceCapitulos = jceCapitulos;
        this.jceGenero = jceGenero;
        this.jceLancamento = jceLancamento;
        this.jceCriador = jceCriador;
-       this.jceEstudio = jceEstudio;
+       this.jcePublicadora = jcePublicadora;
        this.jceTags = jceTags;
     }
    
@@ -79,7 +79,7 @@ public class JceHqs  implements java.io.Serializable {
         return this.jceCapitulos;
     }
     
-    public void setJceCapitulos(int jceCapitulos) {
+    public void setJceCapitulos(double jceCapitulos) {
         this.jceCapitulos = jceCapitulos;
     }
 
@@ -114,13 +114,13 @@ public class JceHqs  implements java.io.Serializable {
     }
 
     
-    @Column(name="jce_estudio", nullable=false, length=30)
-    public String getJceEstudio() {
-        return this.jceEstudio;
+    @Column(name="jce_publicadora", nullable=false, length=50)
+    public String getJcePublicadora() {
+        return this.jcePublicadora;
     }
     
-    public void setJceEstudio(String jceEstudio) {
-        this.jceEstudio = jceEstudio;
+    public void setJcePublicadora(String jcePublicadora) {
+        this.jcePublicadora = jcePublicadora;
     }
 
     
@@ -137,3 +137,5 @@ public class JceHqs  implements java.io.Serializable {
 
 
 }
+
+

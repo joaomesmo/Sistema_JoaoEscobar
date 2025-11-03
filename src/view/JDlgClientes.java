@@ -48,7 +48,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jceclientes.setJceNome(jTxtNome.getText());
         jceclientes.setJceApelido(jTxtApelido.getText());
         //jceclientes.setJceStatus(jCboStatus.getSelectedIndex());
-        jceclientes.setJceDatanasc(Util.strToDate(jFmtDatanasc.getText()));   
+        jceclientes.setJceData(Util.strToDate(jFmtDatanasc.getText()));   
         jceclientes.setJceSenha(jPwfSenha.getText());
         //jceclientes.setJceGenero(jCboGenero.getSelectedIndex());
         jceclientes.setJceTelefone(jFmtTelefone.getText());
@@ -67,7 +67,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jFmtEmail.setText(jceclientes.getJceEmail());
         //jPwfSenha.setText(jceclientes.getJceSenha());
         //jCboGenero.setSelectedIndex(jceclientes.getJceGenero());
-        jFmtDatanasc.setText(Util.dateToStr(jceclientes.getJceDatanasc()));
+        jFmtDatanasc.setText(Util.dateToStr(jceclientes.getJceData()));
         jFmtTelefone.setText(jceclientes.getJceTelefone());
         //String gasto = String.valueOf(jceclientes.getJce);
         //jFmtGasto.setText(gasto);

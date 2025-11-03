@@ -62,7 +62,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTxtEstudio" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTxtPublicadora" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTxtGenero" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -137,7 +137,7 @@
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTxtEstudio" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtPublicadora" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -246,7 +246,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTxtEstudio">
+    <Component class="javax.swing.JTextField" name="jTxtPublicadora">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>

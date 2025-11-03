@@ -24,7 +24,7 @@ public class JDlgHQs extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
-            jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jTxtPublicadora,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }
     
@@ -39,7 +39,7 @@ public class JDlgHQs extends javax.swing.JDialog {
         jcehqs.setJceGenero(jTxtGenero.getText());
         jcehqs.setJceLancamento(Util.strToDate(jFmtDatalancamento.getText()));
         jcehqs.setJceCriador(jTxtCriador.getText());
-        jcehqs.setJceEstudio(jTxtEstudio.getText());
+        jcehqs.setJcePublicadora(jTxtPublicadora.getText());
         jcehqs.setJceTags(jTxtTags.getText());
         return jcehqs;
     }
@@ -51,7 +51,7 @@ public class JDlgHQs extends javax.swing.JDialog {
         jTxtNome.setText(jcehqs.getJceNome());
         String capituiilo = String.valueOf(jcehqs.getJceCapitulos());
         jTxtCapitulos.setText(capituiilo);
-        jTxtEstudio.setText(jcehqs.getJceEstudio());
+        jTxtPublicadora.setText(jcehqs.getJcePublicadora());
         jTxtGenero.setText(jcehqs.getJceGenero());
         jFmtDatalancamento.setText(Util.dateToStr(jcehqs.getJceLancamento()));
         jTxtCriador.setText(jcehqs.getJceCriador());
@@ -90,7 +90,7 @@ public class JDlgHQs extends javax.swing.JDialog {
         jBtnCancelar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jTxtCodigo = new javax.swing.JFormattedTextField();
-        jTxtEstudio = new javax.swing.JTextField();
+        jTxtPublicadora = new javax.swing.JTextField();
         jTxtTags = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -162,8 +162,8 @@ public class JDlgHQs extends javax.swing.JDialog {
         jTxtCodigo.setBackground(new java.awt.Color(102, 102, 102));
         jTxtCodigo.setForeground(new java.awt.Color(204, 204, 204));
 
-        jTxtEstudio.setBackground(new java.awt.Color(102, 102, 102));
-        jTxtEstudio.setForeground(new java.awt.Color(204, 204, 204));
+        jTxtPublicadora.setBackground(new java.awt.Color(102, 102, 102));
+        jTxtPublicadora.setForeground(new java.awt.Color(204, 204, 204));
 
         jTxtTags.setBackground(new java.awt.Color(102, 102, 102));
         jTxtTags.setForeground(new java.awt.Color(204, 204, 204));
@@ -249,7 +249,7 @@ public class JDlgHQs extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel10)
                             .addComponent(jLabel14)
-                            .addComponent(jTxtEstudio)
+                            .addComponent(jTxtPublicadora)
                             .addComponent(jTxtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +305,7 @@ public class JDlgHQs extends javax.swing.JDialog {
                         .addGap(8, 8, 8)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTxtEstudio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTxtPublicadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -335,37 +335,37 @@ public class JDlgHQs extends javax.swing.JDialog {
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
         Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalancamento,
-            jTxtCriador, jTxtEstudio,  jTxtTags, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
+            jTxtCriador, jTxtPublicadora,  jTxtTags, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalancamento,
-            jTxtCriador, jTxtEstudio,  jTxtTags, jBtnIncluir, jBtnAlterar);
+            jTxtCriador, jTxtPublicadora,  jTxtTags, jBtnIncluir, jBtnAlterar);
         Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
-            jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jTxtPublicadora,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
-        Util.limpar(jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtEstudio);
+        Util.limpar(jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtPublicadora);
         Util.perguntar("excluir?");
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
-            jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jTxtPublicadora,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
-            jTxtEstudio,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jTxtPublicadora,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
@@ -430,9 +430,9 @@ public class JDlgHQs extends javax.swing.JDialog {
     private javax.swing.JTextField jTxtCapitulos;
     private javax.swing.JFormattedTextField jTxtCodigo;
     private javax.swing.JTextField jTxtCriador;
-    private javax.swing.JTextField jTxtEstudio;
     private javax.swing.JTextField jTxtGenero;
     private javax.swing.JTextField jTxtNome;
+    private javax.swing.JTextField jTxtPublicadora;
     private javax.swing.JTextField jTxtTags;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,7 +34,7 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
         int codigo = Util.strToInt(jTxtCodigo.getText());
         jcepublicadoras.setJceIdpublicadoras(codigo);
         jcepublicadoras.setJceNome(jTxtNome.getText());
-        jcepublicadoras.setJceCriadaEm(Util.strToDate(jFmtCriadoEm.getText()));
+        jcepublicadoras.setJceCriada(Util.strToDate(jFmtCriadoEm.getText()));
         jcepublicadoras.setJceStatus(jCbxStatus.getSelectedIndex());
         jcepublicadoras.setJceEmail(jFmtEmail.getText());
         jcepublicadoras.setJceSenha(jPswSenha.getText());
@@ -48,7 +48,7 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
         String codigo = String.valueOf(jcepublicadoras.getJceIdpublicadoras());
         jTxtCodigo.setText(codigo);
         jTxtNome.setText(jcepublicadoras.getJceNome());
-        jFmtCriadoEm.setText(Util.dateToStr(jcepublicadoras.getJceCriadaEm()));
+        jFmtCriadoEm.setText(Util.dateToStr(jcepublicadoras.getJceCriada()));
         jCbxStatus.setSelectedIndex(jcepublicadoras.getJceStatus());
         jFmtEmail.setText(jcepublicadoras.getJceEmail());
         jPswSenha.setText(jcepublicadoras.getJceSenha());
