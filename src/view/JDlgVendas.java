@@ -7,6 +7,13 @@ package view;
 import bean.JceClientes;
 import bean.JceVendas;
 import bean.JcePublicadoras;
+import bean.JceHqs;
+import bean.JceVendasProdutos;
+import dao.ClientesDAO;
+import dao.PublicadorasDAO;
+import dao.HQsDAO;
+import dao.VendasDAO;
+import dao.VendasProdutosDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,7 +23,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
-import controllers.VendasProdutosController;
+import controllers.ControllerVendasProdutos;
+import java.util.ArrayList;
 import pesquisas.JDlgVendasPesquisar;
 import tools.Util;
 
@@ -26,6 +34,7 @@ import tools.Util;
  */
 public class JDlgVendas extends javax.swing.JDialog {
 
+    ControllerVendasProdutos controllerVendasProdutos;
     /**
      * Creates new form JDlgVendas
      */
@@ -41,6 +50,21 @@ public class JDlgVendas extends javax.swing.JDialog {
                jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2,
             jBtnConfirmar,jBtnCancelar, jBtnExcluir);
         Util.habilitar(true,jBtnIncluir, jBtnAlterar);
+                
+                ClientesDAO clientesDAO = new ClientesDAO();
+        List lista = (List) clientesDAO.listAll();
+        for (int i = 0; i < lista.size(); i++) {
+            jCboClientes.addItem((JceClientes) lista.get(i));
+
+        }
+        PublicadorasDAO publicadorasDAO = new PublicadorasDAO();
+        List listaVend = (List) publicadorasDAO.listAll();
+        for (Object object : listaVend) {
+            jCboPublicadoras.addItem((JcePublicadoras) object);
+        }
+        controllerVendasProdutos = new ControllerVendasProdutos();
+        controllerVendasProdutos.setList(new ArrayList());
+        jTable1.setModel(controllerVendasProdutos);
     }
     
     public JceVendas viewBean() {
@@ -84,9 +108,9 @@ public class JDlgVendas extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jTxtCodigo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jCboClientes = new javax.swing.JComboBox<String>();
+        jCboClientes = new javax.swing.JComboBox<JceClientes>();
         jLabel4 = new javax.swing.JLabel();
-        jCboPublicadoras = new javax.swing.JComboBox<String>();
+        jCboPublicadoras = new javax.swing.JComboBox<JcePublicadoras>();
         jFmtTotal = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         jBtnIncluir2 = new javax.swing.JButton();
@@ -120,11 +144,7 @@ public class JDlgVendas extends javax.swing.JDialog {
 
         jLabel3.setText("Clientes");
 
-        jCboClientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel4.setText("Publicadoras");
-
-        jCboPublicadoras.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel5.setText("Total");
 
@@ -242,7 +262,7 @@ public class JDlgVendas extends javax.swing.JDialog {
                         .addComponent(jBtnCancelar)
                         .addGap(5, 5, 5)
                         .addComponent(jBtnPesquisar)
-                        .addGap(0, 10, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -316,6 +336,13 @@ public class JDlgVendas extends javax.swing.JDialog {
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
+        if (Util.perguntar("Deseja Excluir?") == true) {
+            VendasDAO vendasDAO = new VendasDAO();
+            vendasDAO.delete(viewBean());
+        } else {
+            Util.mensagem("Exclusão cancelada.");
+        }
+        
         Util.habilitar(false, jTxtCodigo, jTxtPedido, jCboClientes,  jCboPublicadoras, jFmtTotal,
                jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2,
             jBtnConfirmar,jBtnCancelar, jBtnExcluir);
@@ -324,10 +351,27 @@ public class JDlgVendas extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
+        VendasDAO vendasDAO = new VendasDAO();
+        VendasProdutosDAO vendasProdutosDAO = new VendasProdutosDAO();
+        JceVendas jceVendas = viewBean();
+        if (incluir == true) {
+            vendasDAO.insert(jceVendas);
+            for (int ind = 0; ind < jTable1.getRowCount(); ind++) {
+                JceVendasProdutos jceVendasProdutos = controllerVendasProdutos.getBean(ind);
+                JcePublicadoras jcePublicadoras = null;
+                jceVendasProdutos.setJcePublicadoras(jcePublicadoras);
+                vendasProdutosDAO.insert(jceVendasProdutos);
+            }
+        } else {
+            vendasDAO.update(jceVendas);
+        }
+        
+        
         Util.habilitar(false, jTxtCodigo, jTxtPedido, jCboClientes,  jCboPublicadoras, jFmtTotal,
                jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2,
             jBtnConfirmar,jBtnCancelar, jBtnExcluir);
         Util.habilitar(true,jBtnIncluir, jBtnAlterar);
+        Util.limpar(jTxtCodigo, jTxtPedido, jCboClientes, jCboPublicadoras, jFmtTotal);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
@@ -336,6 +380,7 @@ public class JDlgVendas extends javax.swing.JDialog {
                jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2,
             jBtnConfirmar,jBtnCancelar, jBtnExcluir);
         Util.habilitar(true,jBtnIncluir, jBtnAlterar);
+        Util.limpar(jTxtCodigo, jTxtPedido, jCboClientes, jCboPublicadoras, jFmtTotal);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
@@ -399,8 +444,8 @@ public class JDlgVendas extends javax.swing.JDialog {
     private javax.swing.JButton jBtnIncluir;
     private javax.swing.JButton jBtnIncluir2;
     private javax.swing.JButton jBtnPesquisar;
-    private javax.swing.JComboBox<String> jCboClientes;
-    private javax.swing.JComboBox<String> jCboPublicadoras;
+    private javax.swing.JComboBox<JceClientes> jCboClientes;
+    private javax.swing.JComboBox<JcePublicadoras> jCboPublicadoras;
     private javax.swing.JFormattedTextField jFmtTotal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

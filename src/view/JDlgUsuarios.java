@@ -326,6 +326,8 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         if (Util.perguntar("Deseja Excluir?") == true) {
             UsuariosDAO usuariosDAO = new UsuariosDAO();
             usuariosDAO.delete(viewBean());
+        }else {
+            Util.mensagem("Nao excluido");
         }
         
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPswSenha, jFmtCPF, jFmtDatanasc,

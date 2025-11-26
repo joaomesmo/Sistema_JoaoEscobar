@@ -1,5 +1,5 @@
 package bean;
-// Generated 03/11/2025 08:01:43 by Hibernate Tools 4.3.1
+// Generated 26/11/2025 10:15:25 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -33,10 +33,9 @@ public class JceClientes  implements java.io.Serializable {
      private String jceTelefone;
      private String jceLocalizacao;
      private String jceBio;
-     private Integer jceStatus;
-     private Integer jceGenero;
+     private int jceStatus;
+     private int jceGenero;
      private String jceGasto;
-     private Set jceVendases = new HashSet(0);
 
     public JceClientes() {
     }
@@ -50,7 +49,7 @@ public class JceClientes  implements java.io.Serializable {
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, Integer jceStatus, Integer jceGenero, String jceGasto, Set jceVendases) {
+    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, int jceStatus, int jceGenero, String jceGasto, Set jceVendases) {
        this.idjceClientes = idjceClientes;
        this.jceNome = jceNome;
        this.jceApelido = jceApelido;
@@ -63,7 +62,6 @@ public class JceClientes  implements java.io.Serializable {
        this.jceStatus = jceStatus;
        this.jceGenero = jceGenero;
        this.jceGasto = jceGasto;
-       this.jceVendases = jceVendases;
     }
    
      @Id 
@@ -160,21 +158,21 @@ public class JceClientes  implements java.io.Serializable {
 
     
     @Column(name="jce_status")
-    public Integer getJceStatus() {
+    public int getJceStatus() {
         return this.jceStatus;
     }
     
-    public void setJceStatus(Integer jceStatus) {
+    public void setJceStatus(int jceStatus) {
         this.jceStatus = jceStatus;
     }
 
     
     @Column(name="jce_genero")
-    public Integer getJceGenero() {
+    public int getJceGenero() {
         return this.jceGenero;
     }
     
-    public void setJceGenero(Integer jceGenero) {
+    public void setJceGenero(int jceGenero) {
         this.jceGenero = jceGenero;
     }
 
@@ -187,19 +185,6 @@ public class JceClientes  implements java.io.Serializable {
     public void setJceGasto(String jceGasto) {
         this.jceGasto = jceGasto;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="jceClientes")
-    public Set getJceVendases() {
-        return this.jceVendases;
-    }
-    
-    public void setJceVendases(Set jceVendases) {
-        this.jceVendases = jceVendases;
-    }
-
-
-
-
 }
 
 

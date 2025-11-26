@@ -339,11 +339,17 @@ public class JDlgHQs extends javax.swing.JDialog {
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
+        if (Util.perguntar("Deseja Excluir?") == true) {
+            HQsDAO hQsDAO = new HQsDAO();
+            hQsDAO.delete(viewBean());
+        } else {
+            Util.mensagem("Exclusão cancelada.");
+        }
+        
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
             jTxtPublicadora,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
         Util.limpar(jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtPublicadora);
-        Util.perguntar("excluir?");
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed

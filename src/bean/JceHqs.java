@@ -1,11 +1,15 @@
 package bean;
-// Generated 03/11/2025 08:01:43 by Hibernate Tools 4.3.1
+// Generated 26/11/2025 10:15:25 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,7 +44,7 @@ public class JceHqs  implements java.io.Serializable {
         this.jceCriador = jceCriador;
         this.jcePublicadora = jcePublicadora;
     }
-    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags) {
+    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags, Set jceVendasProdutoses) {
        this.jceIdhqs = jceIdhqs;
        this.jceNome = jceNome;
        this.jceCapitulos = jceCapitulos;
@@ -132,10 +136,6 @@ public class JceHqs  implements java.io.Serializable {
     public void setJceTags(String jceTags) {
         this.jceTags = jceTags;
     }
-
-
-
-
 }
 
 

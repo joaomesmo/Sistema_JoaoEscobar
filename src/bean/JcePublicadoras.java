@@ -1,5 +1,5 @@
 package bean;
-// Generated 03/11/2025 08:01:43 by Hibernate Tools 4.3.1
+// Generated 26/11/2025 10:15:25 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -29,13 +29,12 @@ public class JcePublicadoras  implements java.io.Serializable {
      private int jceIdpublicadoras;
      private String jceNome;
      private Date jceCriada;
-     private Integer jceStatus;
+     private int jceStatus;
      private String jceEmail;
      private String jceSenha;
      private String jceTelefone;
      private String jceSeed;
      private String jceDescricao;
-     private Set jceVendases = new HashSet(0);
 
     public JcePublicadoras() {
     }
@@ -48,7 +47,7 @@ public class JcePublicadoras  implements java.io.Serializable {
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JcePublicadoras(int jceIdpublicadoras, String jceNome, Date jceCriada, Integer jceStatus, String jceEmail, String jceSenha, String jceTelefone, String jceSeed, String jceDescricao, Set jceVendases) {
+    public JcePublicadoras(int jceIdpublicadoras, String jceNome, Date jceCriada, int jceStatus, String jceEmail, String jceSenha, String jceTelefone, String jceSeed, String jceDescricao, Set jceVendases, Set jceVendasProdutoses) {
        this.jceIdpublicadoras = jceIdpublicadoras;
        this.jceNome = jceNome;
        this.jceCriada = jceCriada;
@@ -58,7 +57,6 @@ public class JcePublicadoras  implements java.io.Serializable {
        this.jceTelefone = jceTelefone;
        this.jceSeed = jceSeed;
        this.jceDescricao = jceDescricao;
-       this.jceVendases = jceVendases;
     }
    
      @Id 
@@ -95,11 +93,11 @@ public class JcePublicadoras  implements java.io.Serializable {
 
     
     @Column(name="jce_status")
-    public Integer getJceStatus() {
+    public int getJceStatus() {
         return this.jceStatus;
     }
     
-    public void setJceStatus(Integer jceStatus) {
+    public void setJceStatus(int jceStatus) {
         this.jceStatus = jceStatus;
     }
 
@@ -152,19 +150,6 @@ public class JcePublicadoras  implements java.io.Serializable {
     public void setJceDescricao(String jceDescricao) {
         this.jceDescricao = jceDescricao;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="jcePublicadoras")
-    public Set getJceVendases() {
-        return this.jceVendases;
-    }
-    
-    public void setJceVendases(Set jceVendases) {
-        this.jceVendases = jceVendases;
-    }
-
-
-
-
 }
 
 

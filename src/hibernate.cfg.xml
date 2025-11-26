@@ -46,11 +46,11 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://10.7.0.51:33062/db_joao_escobar?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">joao_escobar</property>
     <property name="hibernate.connection.password">joao_escobar</property>
-    <mapping class="bean.JceUsuarios"/>
+    <mapping class="bean.JceVendasProdutos"/>
     <mapping class="bean.JceHqs"/>
+    <mapping class="bean.JceUsuarios"/>
+    <mapping class="bean.JceVendas"/>
     <mapping class="bean.JceClientes"/>
     <mapping class="bean.JcePublicadoras"/>
-    <mapping class="bean.JceVendas"/>
-    <mapping class="bean.JceVendasProdutos"/>
   </session-factory>
 </hibernate-configuration>
