@@ -4,14 +4,19 @@
  */
 package view;
 
+import bean.JceClientes;
+import bean.JceVendas;
+import bean.JcePublicadoras;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import controllers.VendasProdutosController;
 import pesquisas.JDlgVendasPesquisar;
 import tools.Util;
 
@@ -37,11 +42,31 @@ public class JDlgVendas extends javax.swing.JDialog {
             jBtnConfirmar,jBtnCancelar, jBtnExcluir);
         Util.habilitar(true,jBtnIncluir, jBtnAlterar);
     }
-
     
-    
+    public JceVendas viewBean() {
+        JceVendas jceVendas = new JceVendas();
         
+        jceVendas.setJceIdvendas(Integer.valueOf(jTxtCodigo.getText()));
+        
+        jceVendas.setJceNumpedido(jTxtPedido.getText());
+        jceVendas.setJceTotal(Double.valueOf(jFmtTotal.getText()));
+        
+        jceVendas.setJceClientes((JceClientes)jCboClientes.getSelectedItem());
+        jceVendas.setJcePublicadoras((JcePublicadoras)jCboPublicadoras.getSelectedItem());
+        
+         return jceVendas;
+    }
     
+    public void beanView(JceVendas jceVendas, List lista){
+        
+        jTxtCodigo.setText(String.valueOf(jceVendas.getJceIdvendas()));
+        
+        jTxtPedido.setText(jceVendas.getJceNumpedido());
+        //jFmtTotal.setText(jceVendas.getJceTotal());
+        
+        jCboClientes.setSelectedItem(jceVendas.getJceClientes());
+        jCboPublicadoras.setSelectedItem(jceVendas.getJcePublicadoras());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

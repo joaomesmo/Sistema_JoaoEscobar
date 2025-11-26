@@ -5,6 +5,7 @@
 package view;
 
 import bean.JceClientes;
+import dao.ClientesDAO;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +21,7 @@ import tools.Util;
 public class JDlgClientes extends javax.swing.JDialog {
 
     private MaskFormatter mascaraDataNasc;
+    boolean incluir;
     /**
      * Creates new form JDlgClientes
      */
@@ -435,6 +437,15 @@ public class JDlgClientes extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
+        ClientesDAO clientesDAO = new ClientesDAO();
+        clientesDAO.insert(viewBean());
+        
+        if (incluir == true){
+            clientesDAO.insert(viewBean());
+        }else{
+            clientesDAO.update(viewBean());
+        }
+        
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
             jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);

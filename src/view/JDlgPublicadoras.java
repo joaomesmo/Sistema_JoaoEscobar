@@ -5,6 +5,7 @@
 package view;
 
 import bean.JcePublicadoras;
+import dao.PublicadorasDAO;
 import pesquisas.JDlgPublicadorasPesquisar;
 import tools.Util;
 
@@ -14,6 +15,7 @@ import tools.Util;
  */
 public class JDlgPublicadoras extends javax.swing.JDialog {
 
+    boolean incluir;
     /**
      * Creates new form JDlgPublicadoras
      */
@@ -30,7 +32,6 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
     
     public JcePublicadoras viewBean() {
         JcePublicadoras jcepublicadoras = new JcePublicadoras();
-        //usuarios.setIdusuarios(Util.strToInt( jTxtCodigo.getText() ));
         int codigo = Util.strToInt(jTxtCodigo.getText());
         jcepublicadoras.setJceIdpublicadoras(codigo);
         jcepublicadoras.setJceNome(jTxtNome.getText());
@@ -325,6 +326,8 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
+        incluir = true;
+        
         Util.habilitar(true, jTxtCodigo, jTxtNome, jFmtCriadoEm, jCbxStatus, jFmtEmail,
             jPswSenha, jFmtTelefone,  jFmtSeed,jTxtDescricao, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
@@ -332,6 +335,8 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
+        incluir = false;
+        
         Util.habilitar(false, jTxtCodigo, jTxtNome, jFmtCriadoEm, jCbxStatus, jFmtEmail,
             jPswSenha, jFmtTelefone,  jFmtSeed,jTxtDescricao, jBtnIncluir, jBtnAlterar);
         Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
@@ -348,6 +353,15 @@ public class JDlgPublicadoras extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
+        PublicadorasDAO publicadorasDAO = new PublicadorasDAO();
+        publicadorasDAO.insert(viewBean());
+        
+        if (incluir == true){
+            publicadorasDAO.insert(viewBean());
+        }else{
+            publicadorasDAO.update(viewBean());
+        }
+        
         Util.habilitar(false, jTxtCodigo, jTxtNome, jFmtCriadoEm,  jPswSenha, jCbxStatus, jFmtEmail,
             jFmtTelefone,  jFmtSeed,jTxtDescricao, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);

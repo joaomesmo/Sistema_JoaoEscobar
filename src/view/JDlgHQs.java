@@ -7,6 +7,7 @@ package view;
 import pesquisas.JDlgHQsPesquisar;
 import tools.Util;
 import bean.JceHqs;
+import dao.HQsDAO;
 
 /**
  *
@@ -14,6 +15,7 @@ import bean.JceHqs;
  */
 public class JDlgHQs extends javax.swing.JDialog {
 
+    boolean incluir;
     /**
      * Creates new form JDlgHQs
      */
@@ -57,21 +59,6 @@ public class JDlgHQs extends javax.swing.JDialog {
         jTxtCriador.setText(jcehqs.getJceCriador());
         jTxtTags.setText(jcehqs.getJceTags());
     }
-//    public void beanView(JceHqs jcehqs) {
-//        jTxtCodigo.setText(Util.intToStr(jcehqs.getJceIdusuarios()));
-//        jTxtNome.setText(jcehqs.getJceNome());
-//        jTxtApelido.setText(jcehqs.getJceApelido());
-//        jFmtCPF.setText(jcehqs.getJceCpf());
-//        jFmtDatanasc.setText(Util.dateToStr(jcehqs.getJceDataNascimento()));
-//        jPswSenha.setText(jcehqs.getJceSenha());
-//        jCboNivel.setSelectedIndex(jcehqs.getJceNivel());
-//        //jChbAtivo.setSelected(usuarios.getAtivo().equals("S"));
-//        if (jcehqs.getJceAtivo().equals("S") == true) {
-//            jChbAtivo.setSelected(true);
-//        } else {
-//            jChbAtivo.setSelected(false);
-//        }
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -334,6 +321,8 @@ public class JDlgHQs extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
+        incluir = true;
+        
         Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalancamento,
             jTxtCriador, jTxtPublicadora,  jTxtTags, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
@@ -341,6 +330,8 @@ public class JDlgHQs extends javax.swing.JDialog {
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
+        incluir= false;
+        
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos, jTxtGenero, jFmtDatalancamento,
             jTxtCriador, jTxtPublicadora,  jTxtTags, jBtnIncluir, jBtnAlterar);
         Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
@@ -357,6 +348,15 @@ public class JDlgHQs extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
+        HQsDAO hQsDAO = new HQsDAO();
+        hQsDAO.insert(viewBean());
+        
+        if (incluir == true){
+            hQsDAO.insert(viewBean());
+        }else{
+            hQsDAO.update(viewBean());
+        }
+        
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
             jTxtPublicadora,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
