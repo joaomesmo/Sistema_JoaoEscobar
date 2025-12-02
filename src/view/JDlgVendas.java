@@ -46,22 +46,24 @@ public class JDlgVendas extends javax.swing.JDialog {
         setTitle("Vendas");
         setLocationRelativeTo(null);
         
-        Util.habilitar(false, jTxtCodigo, jTxtPedido, jCboClientes,  jCboPublicadoras, jFmtTotal,
-               jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2,
-            jBtnConfirmar,jBtnCancelar, jBtnExcluir);
+        Util.habilitar(false, jTxtCodigo, jTxtPedido, jCboClientes,  jCboPublicadoras, jFmtTotal, jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2, jBtnConfirmar,jBtnCancelar, jBtnExcluir);
         Util.habilitar(true,jBtnIncluir, jBtnAlterar);
                 
+        
                 ClientesDAO clientesDAO = new ClientesDAO();
         List lista = (List) clientesDAO.listAll();
         for (int i = 0; i < lista.size(); i++) {
             jCboClientes.addItem((JceClientes) lista.get(i));
-
         }
+        
+        
         PublicadorasDAO publicadorasDAO = new PublicadorasDAO();
         List listaVend = (List) publicadorasDAO.listAll();
         for (Object object : listaVend) {
             jCboPublicadoras.addItem((JcePublicadoras) object);
         }
+        
+        
         controllerVendasProdutos = new ControllerVendasProdutos();
         controllerVendasProdutos.setList(new ArrayList());
         jTable1.setModel(controllerVendasProdutos);
@@ -91,6 +93,17 @@ public class JDlgVendas extends javax.swing.JDialog {
         jCboClientes.setSelectedItem(jceVendas.getJceClientes());
         jCboPublicadoras.setSelectedItem(jceVendas.getJcePublicadoras());
     }
+    
+    /*public void addHQs(JceHqs jceHqs, int fcaQuantidade, double jceValor) {
+    JceVendasProdutos jceVendasProdutos = new JceVendasProdutos();
+    JceVendas jceVendas = new JceVendas();
+    
+    jceVendas.setJcePublicadoras(jceHqs);
+    jceVendasProdutos.setJceQuantidade(fcaQuantidade);
+    jceVendasProdutos.setJceValorUnitario(jceValor);
+    controllerVendasProdutos.addBean(jceVendasProdutos);
+    }*/
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
