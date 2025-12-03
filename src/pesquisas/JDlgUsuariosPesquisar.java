@@ -7,6 +7,8 @@ package pesquisas;
 import view.JDlgUsuarios;
 import controllers.ControllerUsuarios;
 import java.util.List;
+import tools.Util;
+import bean.JceUsuarios;
 
 /**
  *
@@ -109,7 +111,13 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
 
     private void jBtnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnOkActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
+        /*if (jTable1.getSelectedRow() == -1) {
+            Util.mensagem("nenhuma linha selecionada");
+        } else {
+            JceUsuarios jceusuarios =  controllerUsuarios.getBean( jTable1.getSelectedRow() );
+        jDlgUsuarios.beanView(jceusuarios);
+        this.setVisible(false);
+        }*/
     }//GEN-LAST:event_jBtnOkActionPerformed
 
     /**

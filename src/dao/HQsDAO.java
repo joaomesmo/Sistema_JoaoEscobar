@@ -46,7 +46,7 @@ public class HQsDAO extends DAOAbstract {
     public Object list(int codigo) {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(JceHqs.class);
-        criteria.add(Restrictions.eq("idusuarios", codigo));
+        criteria.add(Restrictions.eq("idhqs", codigo));
         List lista = criteria.list();
         session.getTransaction().commit();
         return lista;

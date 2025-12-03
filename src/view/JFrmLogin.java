@@ -14,11 +14,16 @@ import javax.swing.JOptionPane;
 public class JFrmLogin extends javax.swing.JFrame {
 
     String nome = "joao", senha = "sim";
+    int tentativas = 0;
     /**
      * Creates new form JFrmLogin
      */
     public JFrmLogin() {
         initComponents();
+        setTitle("Login");
+        setLocationRelativeTo(null);
+        jTxtUsuario.addActionListener(evt -> jPswSenha.requestFocus());
+        jPswSenha.addActionListener(evt -> jBtnEntrar.requestFocus());
     }
 
     /**
@@ -30,20 +35,42 @@ public class JFrmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTxtUsuario = new javax.swing.JTextField();
-        jBtnEntrar = new javax.swing.JButton();
         jPswSenha = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        jBtnEntrar = new javax.swing.JButton();
         jBtnEntrar1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Senha");
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
+        jLabel2.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuario");
 
-        jBtnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chave.png"))); // NOI18N
+        jTxtUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtUsuario.setFont(new java.awt.Font("Papyrus", 0, 14)); // NOI18N
+        jTxtUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jTxtUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        jPswSenha.setBackground(new java.awt.Color(0, 0, 0));
+        jPswSenha.setFont(new java.awt.Font("Papyrus", 0, 14)); // NOI18N
+        jPswSenha.setForeground(new java.awt.Color(255, 255, 255));
+        jPswSenha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+
+        jLabel4.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Senha");
+
+        jBtnEntrar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnEntrar.setFont(new java.awt.Font("Papyrus", 1, 14)); // NOI18N
+        jBtnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnEntrar.setText("Entrar");
         jBtnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,7 +78,9 @@ public class JFrmLogin extends javax.swing.JFrame {
             }
         });
 
-        jBtnEntrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/saida.png"))); // NOI18N
+        jBtnEntrar1.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnEntrar1.setFont(new java.awt.Font("Papyrus", 1, 14)); // NOI18N
+        jBtnEntrar1.setForeground(new java.awt.Color(255, 255, 255));
         jBtnEntrar1.setText("Sair");
         jBtnEntrar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,68 +88,74 @@ public class JFrmLogin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTxtUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jPswSenha)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel4)))
+                .addContainerGap(211, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jBtnEntrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBtnEntrar1))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jTxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jPswSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 3, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jBtnEntrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnEntrar1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPswSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jTxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnEntrar)
-                    .addComponent(jBtnEntrar1))
-                .addGap(5, 5, 5))
+                .addComponent(jLabel4)
+                .addGap(3, 3, 3)
+                .addComponent(jPswSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnEntrar1)
+                    .addComponent(jBtnEntrar))
+                .addGap(12, 12, 12))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 490, 180));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
         // TODO add your handling code here:
-        String nomeDigitado, senhaDigitada;
-
-        nomeDigitado = jTxtUsuario.getText();
-        senhaDigitada = jPswSenha.getText();
-
-        if (nomeDigitado.equals(nome) && senhaDigitada.equals(senha)){
-            new JFrmMenu().setVisible(true);
+        if(jTxtUsuario.getText().equals("joao") && jPswSenha.getText().equals("sim")){
+            JFrmMenu jFrmMenu = new JFrmMenu();
+            jFrmMenu.setVisible(true); this.setVisible(false);
             dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Usuario ou Senha errado");
+        
+        }else {
+            tentativas++;
+            if (tentativas >= 3) {
+                JOptionPane.showMessageDialog(null, "Num sabe");
+                System.exit(0);
+            } else {
+                JOptionPane.showMessageDialog(null, "tem algo errado, se vira pra descobrir oq é " + (3 - tentativas));
+            }
         }
     }//GEN-LAST:event_jBtnEntrarActionPerformed
 
     private void jBtnEntrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrar1ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_jBtnEntrar1ActionPerformed
 
     /**
@@ -163,6 +198,8 @@ public class JFrmLogin extends javax.swing.JFrame {
     private javax.swing.JButton jBtnEntrar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPswSenha;
     private javax.swing.JTextField jTxtUsuario;
     // End of variables declaration//GEN-END:variables

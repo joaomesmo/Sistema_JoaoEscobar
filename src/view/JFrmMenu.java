@@ -34,13 +34,13 @@ public class JFrmMenu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jBtnUsuarios = new javax.swing.JButton();
-        jBtnUsuarios1 = new javax.swing.JButton();
-        jBtnUsuarios2 = new javax.swing.JButton();
-        jBtnUsuarios3 = new javax.swing.JButton();
-        jBtnUsuarios4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jBtnVendas = new javax.swing.JButton();
+        jBtnHQs = new javax.swing.JButton();
+        jBtnPublicadoras = new javax.swing.JButton();
+        jBtnSair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLblImg = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -60,104 +60,74 @@ public class JFrmMenu extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jBtnUsuarios.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnUsuarios.setFont(new java.awt.Font("Papyrus", 1, 24)); // NOI18N
+        jBtnUsuarios.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
         jBtnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         jBtnUsuarios.setText("Usuarios");
-        jBtnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnUsuariosActionPerformed(evt);
             }
         });
+        jPanel2.add(jBtnUsuarios);
 
-        jBtnUsuarios1.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnUsuarios1.setFont(new java.awt.Font("Papyrus", 1, 24)); // NOI18N
-        jBtnUsuarios1.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnUsuarios1.setText("Vendas");
-        jBtnUsuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnUsuarios1.addActionListener(new java.awt.event.ActionListener() {
+        jBtnVendas.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnVendas.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
+        jBtnVendas.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnVendas.setText("Vendas");
+        jBtnVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUsuarios1ActionPerformed(evt);
+                jBtnVendasActionPerformed(evt);
             }
         });
+        jPanel2.add(jBtnVendas);
 
-        jBtnUsuarios2.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnUsuarios2.setFont(new java.awt.Font("Papyrus", 1, 24)); // NOI18N
-        jBtnUsuarios2.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnUsuarios2.setText("HQs");
-        jBtnUsuarios2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnUsuarios2.addActionListener(new java.awt.event.ActionListener() {
+        jBtnHQs.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnHQs.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
+        jBtnHQs.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnHQs.setText("HQs");
+        jBtnHQs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUsuarios2ActionPerformed(evt);
+                jBtnHQsActionPerformed(evt);
             }
         });
+        jPanel2.add(jBtnHQs);
 
-        jBtnUsuarios3.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnUsuarios3.setFont(new java.awt.Font("Papyrus", 1, 24)); // NOI18N
-        jBtnUsuarios3.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnUsuarios3.setText("Produtos");
-        jBtnUsuarios3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnUsuarios3.addActionListener(new java.awt.event.ActionListener() {
+        jBtnPublicadoras.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnPublicadoras.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
+        jBtnPublicadoras.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnPublicadoras.setText("Publicadoras");
+        jBtnPublicadoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUsuarios3ActionPerformed(evt);
+                jBtnPublicadorasActionPerformed(evt);
             }
         });
+        jPanel2.add(jBtnPublicadoras);
 
-        jBtnUsuarios4.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnUsuarios4.setFont(new java.awt.Font("Papyrus", 1, 24)); // NOI18N
-        jBtnUsuarios4.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnUsuarios4.setText("Sair");
-        jBtnUsuarios4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnUsuarios4.addActionListener(new java.awt.event.ActionListener() {
+        jBtnSair.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnSair.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
+        jBtnSair.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnSair.setText("Sair");
+        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUsuarios4ActionPerformed(evt);
+                jBtnSairActionPerformed(evt);
             }
         });
+        jPanel2.add(jBtnSair);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnUsuarios)
-                    .addComponent(jBtnUsuarios1)
-                    .addComponent(jBtnUsuarios2)
-                    .addComponent(jBtnUsuarios3)
-                    .addComponent(jBtnUsuarios4))
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jBtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBtnUsuarios1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBtnUsuarios2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBtnUsuarios3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBtnUsuarios4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 830, 1170, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 240, 350));
-
-        jLabel1.setFont(new java.awt.Font("Magneto", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("Background from Undertale Dont Forget");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 980, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Magneto", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("Made by tobyfox");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 980, -1, -1));
+        jLabel2.setText("UNDERTALE/DELTARUNE BY TOBY FOX");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 940, -1, -1));
 
-        jLblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fundo.png"))); // NOI18N
-        jPanel1.add(jLblImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setText("DFC V2.5.1 BY RICKYG");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 940, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fundo2.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenuBar1.setToolTipText("");
 
@@ -206,7 +176,7 @@ public class JFrmMenu extends javax.swing.JFrame {
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/circulo-cruzado.png"))); // NOI18N
-        jMenuItem5.setText("os.remove(\"C:\\Windows\\System32\")");
+        jMenuItem5.setText("Sair");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -221,11 +191,21 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/banco.png"))); // NOI18N
         jMenuItem6.setText("Vendas");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aperto-de-mao.png"))); // NOI18N
         jMenuItem7.setText("Vendas  Produtos");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem7);
 
         jMenuBar1.add(jMenu2);
@@ -280,25 +260,37 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenuItem1.doClick();
     }//GEN-LAST:event_jBtnUsuariosActionPerformed
 
-    private void jBtnUsuarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUsuarios1ActionPerformed
-        // TODO add your handling code here:
-        jMenuItem6.doClick();
-    }//GEN-LAST:event_jBtnUsuarios1ActionPerformed
-
-    private void jBtnUsuarios2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUsuarios2ActionPerformed
-        // TODO add your handling code here:
-        jMenuItem3.doClick();
-    }//GEN-LAST:event_jBtnUsuarios2ActionPerformed
-
-    private void jBtnUsuarios3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUsuarios3ActionPerformed
-        // TODO add your handling code here:
-        jMenuItem4.doClick();
-    }//GEN-LAST:event_jBtnUsuarios3ActionPerformed
-
-    private void jBtnUsuarios4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUsuarios4ActionPerformed
+    private void jBtnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnVendasActionPerformed
         // TODO add your handling code here:
         jMenuItem5.doClick();
-    }//GEN-LAST:event_jBtnUsuarios4ActionPerformed
+    }//GEN-LAST:event_jBtnVendasActionPerformed
+
+    private void jBtnHQsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHQsActionPerformed
+        // TODO add your handling code here:
+        jMenuItem3.doClick();
+    }//GEN-LAST:event_jBtnHQsActionPerformed
+
+    private void jBtnPublicadorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPublicadorasActionPerformed
+        // TODO add your handling code here:
+        jMenuItem4.doClick();
+    }//GEN-LAST:event_jBtnPublicadorasActionPerformed
+
+    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+        // TODO add your handling code here:
+        jMenuItem5.doClick();
+    }//GEN-LAST:event_jBtnSairActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        JDlgVendas jDlgVendas = new JDlgVendas(null, true);
+       jDlgVendas.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        JDlgVendasProdutos jDlgVendasProdutos = new JDlgVendasProdutos(null, true);
+       jDlgVendasProdutos.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,14 +328,14 @@ public class JFrmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnHQs;
+    private javax.swing.JButton jBtnPublicadoras;
+    private javax.swing.JButton jBtnSair;
     private javax.swing.JButton jBtnUsuarios;
-    private javax.swing.JButton jBtnUsuarios1;
-    private javax.swing.JButton jBtnUsuarios2;
-    private javax.swing.JButton jBtnUsuarios3;
-    private javax.swing.JButton jBtnUsuarios4;
+    private javax.swing.JButton jBtnVendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLblImg;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

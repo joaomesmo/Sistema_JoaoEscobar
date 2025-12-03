@@ -30,6 +30,7 @@ public class Util {
             }
         }
     }
+    
     public static void mensagem(String cad){
         JOptionPane.showMessageDialog(null, cad);
     }
@@ -38,50 +39,34 @@ public class Util {
         return resp == JOptionPane.YES_OPTION;
     }
     
-    // Converte String para int
-    public static int strToInt(String num){
-        try {
-            return Integer.parseInt(num);
-        } catch (NumberFormatException e) {
-            mensagem("Valor inválido para inteiro!");
-            return 0;
-        }
-    }
-    
     // Converte int para String
+    public static int strToInt(String num){
+        return Integer.valueOf(num);
+    }
+
     public static String intToStr(int num){
         return String.valueOf(num);
     }
-    
-    // Converte double para String
+
     public static String doubleToStr(double num){
         return String.valueOf(num);
     }
-    
-    // Converte String para double
+
     public static double strToDouble(String num){
-        try {
-            return Double.parseDouble(num.replace(",", "."));
-        } catch (NumberFormatException e) {
-            mensagem("Valor inválido para número!");
-            return 0.0;
-        }
+        return Double.valueOf(num);
     }
-    
-    // Converte String para Date (formato dd/MM/yyyy)
+
     public static Date strToDate(String data){
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             return sdf.parse(data);
         } catch (ParseException e) {
-            mensagem("Data inválida! Use o formato dd/MM/yyyy.");
+            e.printStackTrace();
             return null;
         }
     }
-    
-    // Converte Date para String (formato dd/MM/yyyy)
+
     public static String dateToStr(Date data){
-        if (data == null) return "";
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(data);
     }

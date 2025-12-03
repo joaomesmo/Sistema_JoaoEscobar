@@ -46,7 +46,7 @@ public class ClientesDAO extends DAOAbstract {
     public Object list(int codigo) {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(JceClientes.class);
-        criteria.add(Restrictions.eq("idusuarios", codigo));
+        criteria.add(Restrictions.eq("idclientes", codigo));
         List lista = criteria.list();
         session.getTransaction().commit();
         return lista;
