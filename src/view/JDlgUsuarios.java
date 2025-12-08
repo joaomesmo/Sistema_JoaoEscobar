@@ -112,10 +112,16 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
 
-        jBtnPesquisar.setBackground(new java.awt.Color(0, 153, 204));
+        jFmtCPF.setBackground(new java.awt.Color(0, 0, 0));
+        jFmtCPF.setForeground(new java.awt.Color(255, 255, 255));
+        jFmtCPF.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+
+        jBtnPesquisar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnPesquisar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnPesquisar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/procurar.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
         jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,17 +130,32 @@ public class JDlgUsuarios extends javax.swing.JDialog {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Senha");
 
-        jCboNivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPswSenha.setBackground(new java.awt.Color(0, 0, 0));
+        jPswSenha.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jPswSenha.setForeground(new java.awt.Color(255, 255, 255));
 
+        jCboNivel.setBackground(new java.awt.Color(0, 0, 0));
+        jCboNivel.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jCboNivel.setForeground(new java.awt.Color(255, 255, 255));
+        jCboNivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCboNivel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+
+        jLabel7.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nivel");
 
+        jChbAtivo.setBackground(new java.awt.Color(0, 0, 0));
+        jChbAtivo.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jChbAtivo.setForeground(new java.awt.Color(255, 255, 255));
         jChbAtivo.setText("Ativo");
 
-        jBtnIncluir.setBackground(new java.awt.Color(0, 153, 204));
+        jBtnIncluir.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnIncluir.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnIncluir.setForeground(new java.awt.Color(255, 255, 255));
         jBtnIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/download.png"))); // NOI18N
         jBtnIncluir.setText("Incluir");
         jBtnIncluir.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +164,9 @@ public class JDlgUsuarios extends javax.swing.JDialog {
             }
         });
 
-        jBtnAlterar.setBackground(new java.awt.Color(0, 153, 204));
+        jBtnAlterar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnAlterar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnAlterar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapis.png"))); // NOI18N
         jBtnAlterar.setText("Alterar");
         jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +175,9 @@ public class JDlgUsuarios extends javax.swing.JDialog {
             }
         });
 
-        jBtnExcluir.setBackground(new java.awt.Color(0, 153, 204));
+        jBtnExcluir.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnExcluir.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnExcluir.setForeground(new java.awt.Color(255, 255, 255));
         jBtnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lixo.png"))); // NOI18N
         jBtnExcluir.setText("Excluir");
         jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -162,22 +187,44 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Id");
 
+        jTxtCodigo.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtCodigo.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtCodigo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+
+        jLabel2.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nome");
 
+        jTxtNome.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtNome.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtNome.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+
+        jLabel3.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Apelido");
 
+        jTxtApelido.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtApelido.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtApelido.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtApelido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+
+        jLabel4.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Data de Nascimento");
 
+        jLabel5.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("CPF");
 
-        jBtnConfirmar.setBackground(new java.awt.Color(0, 153, 204));
+        jBtnConfirmar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnConfirmar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/verificar.png"))); // NOI18N
         jBtnConfirmar.setText("Confirmar");
         jBtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +233,13 @@ public class JDlgUsuarios extends javax.swing.JDialog {
             }
         });
 
-        jBtnCancelar.setBackground(new java.awt.Color(0, 153, 204));
+        jFmtDatanasc.setBackground(new java.awt.Color(0, 0, 0));
+        jFmtDatanasc.setForeground(new java.awt.Color(255, 255, 255));
+        jFmtDatanasc.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+
+        jBtnCancelar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnCancelar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/x.png"))); // NOI18N
         jBtnCancelar.setText("Cancelar");
         jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
