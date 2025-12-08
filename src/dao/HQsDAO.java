@@ -51,6 +51,34 @@ public class HQsDAO extends DAOAbstract {
         session.getTransaction().commit();
         return lista;
     }
+    
+    public Object listNome(String nome) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("nome", "%"+"%"));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
+    
+    public Object listValor(double valorUnitario) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.ge("valorUnitario", valorUnitario));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
+    
+    public Object listNomeValor(String nome, double valorUnitario) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("nome", "%"+"%"));
+        criteria.add(Restrictions.ge("valorUnitario", valorUnitario));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
 
     @Override
     public Object listAll() {
