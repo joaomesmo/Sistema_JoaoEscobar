@@ -363,8 +363,6 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
         UsuariosDAO usuariosDAO = new UsuariosDAO();
-        usuariosDAO.insert(viewBean());
-        
         if (incluir == true){
             usuariosDAO.insert(viewBean());
         }else{
@@ -397,10 +395,9 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         // TODO add your handling code here:
         incluir = false;
         
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCPF, jFmtDatanasc,
-            jPswSenha, jCboNivel,  jChbAtivo, jBtnIncluir, jBtnAlterar);
-        Util.habilitar(true,jTxtCodigo, jTxtNome, jTxtApelido, jFmtCPF, jFmtDatanasc,
-            jPswSenha, jCboNivel,  jChbAtivo,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
+        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCPF, jFmtDatanasc,
+            jPswSenha, jCboNivel,  jChbAtivo,jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(false,jTxtCodigo,jBtnIncluir, jBtnAlterar, jBtnPesquisar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed

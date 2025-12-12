@@ -9,16 +9,16 @@ import bean.JceUsuarios;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+
 /**
  *
  * @author Caio
  */
 public class UsuariosDAO extends DAOAbstract {
+    
     @Override
     public void insert(Object object) {
         session.beginTransaction();
-        session.flush();
-        session.clear();
         session.save(object);
         session.getTransaction().commit();
     }

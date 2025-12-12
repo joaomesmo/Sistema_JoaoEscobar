@@ -380,7 +380,6 @@ public class JDlgHQs extends javax.swing.JDialog {
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
         HQsDAO hQsDAO = new HQsDAO();
-        hQsDAO.insert(viewBean());
         
         if (incluir == true){
             hQsDAO.insert(viewBean());

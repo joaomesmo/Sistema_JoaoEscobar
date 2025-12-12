@@ -20,7 +20,7 @@ import tools.Util;
  */
 public class JDlgClientes extends javax.swing.JDialog {
 
-    private MaskFormatter mascaraDataNasc;
+    private MaskFormatter mascaraDataNasc, mascaraTelefone;
     boolean incluir;
     /**
      * Creates new form JDlgClientes
@@ -32,13 +32,15 @@ public class JDlgClientes extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         try {
             mascaraDataNasc = new MaskFormatter("##/##/####");
+            mascaraTelefone = new MaskFormatter("(##) ####-####");
             
             jFmtDatanasc.setFormatterFactory(new DefaultFormatterFactory(mascaraDataNasc));
+            jFmtTelefone.setFormatterFactory(new DefaultFormatterFactory(mascaraTelefone));
         } catch (ParseException ex) {
             Logger.getLogger(JDlgUsuarios.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
             jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }
@@ -92,7 +94,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jLabel21 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jBtnPesquisar = new javax.swing.JButton();
-        jCboStatus = new javax.swing.JComboBox<String>();
+        jCboStatus = new javax.swing.JComboBox<>();
         jBtnIncluir = new javax.swing.JButton();
         jFmtEmail = new javax.swing.JFormattedTextField();
         jBtnAlterar = new javax.swing.JButton();
@@ -104,15 +106,13 @@ public class JDlgClientes extends javax.swing.JDialog {
         jBtnCancelar = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jFmtDatanasc = new javax.swing.JFormattedTextField();
-        jLabel23 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jFmtTelefone = new javax.swing.JFormattedTextField();
         jTxtApelido = new javax.swing.JTextField();
-        jCboGenero = new javax.swing.JComboBox<String>();
+        jCboGenero = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         jFmtLocalizacao = new javax.swing.JFormattedTextField();
         jPwfSenha = new javax.swing.JPasswordField();
-        jTxtAvatar = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -120,6 +120,8 @@ public class JDlgClientes extends javax.swing.JDialog {
         jTxtBio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jTxtNome.setBackground(new java.awt.Color(102, 102, 102));
         jTxtNome.setForeground(new java.awt.Color(204, 204, 204));
@@ -150,7 +152,7 @@ public class JDlgClientes extends javax.swing.JDialog {
 
         jCboStatus.setBackground(new java.awt.Color(102, 102, 102));
         jCboStatus.setForeground(new java.awt.Color(204, 204, 204));
-        jCboStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Leitor", "Tradutor" }));
+        jCboStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Leitor", "Tradutor" }));
 
         jBtnIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/download.png"))); // NOI18N
         jBtnIncluir.setText("Incluir");
@@ -212,10 +214,6 @@ public class JDlgClientes extends javax.swing.JDialog {
         jFmtDatanasc.setBackground(new java.awt.Color(102, 102, 102));
         jFmtDatanasc.setForeground(new java.awt.Color(204, 204, 204));
 
-        jLabel23.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("avatar");
-
         jLabel33.setBackground(new java.awt.Color(255, 255, 255));
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("id");
@@ -228,7 +226,7 @@ public class JDlgClientes extends javax.swing.JDialog {
 
         jCboGenero.setBackground(new java.awt.Color(102, 102, 102));
         jCboGenero.setForeground(new java.awt.Color(204, 204, 204));
-        jCboGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-----------", "masculino", "feminino" }));
+        jCboGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----------", "masculino", "feminino" }));
 
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -239,10 +237,6 @@ public class JDlgClientes extends javax.swing.JDialog {
 
         jPwfSenha.setBackground(new java.awt.Color(102, 102, 102));
         jPwfSenha.setForeground(new java.awt.Color(204, 204, 204));
-
-        jTxtAvatar.setBackground(new java.awt.Color(102, 102, 102));
-        jTxtAvatar.setForeground(new java.awt.Color(204, 204, 204));
-        jTxtAvatar.setText("placeholder. mudar.");
 
         jLabel24.setBackground(new java.awt.Color(255, 255, 255));
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
@@ -265,7 +259,9 @@ public class JDlgClientes extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTxtBio)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jBtnIncluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -279,71 +275,62 @@ public class JDlgClientes extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnPesquisar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTxtApelido, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel19))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jCboStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel21)
-                                    .addComponent(jFmtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPwfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel20))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jCboGenero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel33)
-                                            .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(159, 159, 159)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTxtAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(49, 49, 49)
-                                                .addComponent(jLabel23))))
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jFmtGasto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(132, 132, 132))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jTxtBio))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel26)
-                                            .addComponent(jFmtDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel25)
-                                            .addComponent(jFmtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel31)
-                                            .addComponent(jFmtLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel18)
+                                        .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTxtApelido, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel19))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel27)
+                                        .addComponent(jCboStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel21)
+                                        .addComponent(jFmtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPwfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel20))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel22)
+                                        .addComponent(jCboGenero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel33)
+                                                .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(289, 289, 289))
+                                        .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jFmtGasto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(132, 132, 132))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel26)
+                                        .addComponent(jFmtDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel25)
+                                        .addComponent(jFmtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel31)
+                                        .addComponent(jFmtLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -354,16 +341,9 @@ public class JDlgClientes extends javax.swing.JDialog {
                             .addComponent(jTxtApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel23)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTxtAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -394,11 +374,11 @@ public class JDlgClientes extends javax.swing.JDialog {
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jFmtLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jFmtGasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTxtBio, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -409,20 +389,19 @@ public class JDlgClientes extends javax.swing.JDialog {
                     .addComponent(jBtnExcluir)
                     .addComponent(jBtnConfirmar)
                     .addComponent(jBtnCancelar)
-                    .addComponent(jBtnPesquisar)))
+                    .addComponent(jBtnPesquisar))
+                .addGap(10, 10, 10))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -430,8 +409,8 @@ public class JDlgClientes extends javax.swing.JDialog {
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
-            jFmtTelefone,  jFmtLocalizacao,jFmtGasto, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
+                jFmtTelefone,  jFmtLocalizacao,jFmtGasto, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
@@ -446,7 +425,7 @@ public class JDlgClientes extends javax.swing.JDialog {
             clientesDAO.update(viewBean());
         }
         
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
             jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
@@ -459,7 +438,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         } else {
             Util.mensagem("Nao excluido");
         }
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jTxtAvatar, jFmtDatanasc,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
             jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
         Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido, jFmtTelefone);
@@ -467,14 +446,14 @@ public class JDlgClientes extends javax.swing.JDialog {
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jTxtAvatar, jFmtDatanasc,
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
             jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtGasto,jTxtBio,jBtnIncluir, jBtnAlterar);
         Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jTxtAvatar, jFmtDatanasc,
+        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
             jPwfSenha, jFmtTelefone,  jFmtLocalizacao,jTxtBio, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
@@ -548,7 +527,6 @@ public class JDlgClientes extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -559,7 +537,6 @@ public class JDlgClientes extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPwfSenha;
     private javax.swing.JTextField jTxtApelido;
-    private javax.swing.JTextField jTxtAvatar;
     private javax.swing.JTextField jTxtBio;
     private javax.swing.JTextField jTxtCodigo;
     private javax.swing.JTextField jTxtNome;

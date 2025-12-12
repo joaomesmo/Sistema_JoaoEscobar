@@ -4,9 +4,13 @@
  */
 package pesquisas;
 
+import bean.JcePublicadoras;
 import view.JDlgPublicadoras;
 import controllers.ControllerPublicadoras;
+import controllers.ControllerPublicadoras;
+import dao.PublicadorasDAO;
 import java.util.List;
+import tools.Util;
 
 /**
  *
@@ -23,9 +27,15 @@ public class JDlgPublicadorasPesquisar extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        
+        controllerPublicadoras = new ControllerPublicadoras();
+        PublicadorasDAO publicadorasDAO = new PublicadorasDAO();
+        List lista = (List) publicadorasDAO.listAll();
+        controllerPublicadoras.setList(lista);
+        jTable1.setModel(controllerPublicadoras);
     }
     
-    public void setTelaPai(JDlgPublicadoras jDlgPublicadoras){
+    public void setTelaAnterior(JDlgPublicadoras jDlgPublicadoras){
        this.jDlgPublicadoras = jDlgPublicadoras;
     }
     /**
@@ -44,11 +54,11 @@ public class JDlgPublicadorasPesquisar extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setForeground(new java.awt.Color(204, 204, 204));
+        jTable1.setBackground(new java.awt.Color(0, 0, 0));
+        jTable1.setFont(new java.awt.Font("Papyrus", 0, 11)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -60,6 +70,11 @@ public class JDlgPublicadorasPesquisar extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jBtnOk.setBackground(new java.awt.Color(0, 102, 204));
@@ -84,10 +99,11 @@ public class JDlgPublicadorasPesquisar extends javax.swing.JDialog {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBtnOk))
+                .addComponent(jBtnOk)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -106,8 +122,21 @@ public class JDlgPublicadorasPesquisar extends javax.swing.JDialog {
 
     private void jBtnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnOkActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
+        if (jTable1.getSelectedRow() == -1) {
+            Util.mensagem("selecione uma linha");
+        } else {
+            JcePublicadoras jcePublicadoras = controllerPublicadoras.getBean(jTable1.getSelectedRow());
+            jDlgPublicadoras.beanView(jcePublicadoras);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jBtnOkActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 2) {
+            jBtnOkActionPerformed(null);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments

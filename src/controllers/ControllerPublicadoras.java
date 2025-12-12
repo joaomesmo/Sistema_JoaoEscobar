@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import bean.JcePublicadoras;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -18,8 +19,8 @@ public class ControllerPublicadoras extends AbstractTableModel {
         this.lista = lista;
     }
 
-    public Object getBean(int rowIndex) {
-       return lista.get(rowIndex);    
+    public JcePublicadoras getBean(int rowIndex) {
+       return (JcePublicadoras) lista.get(rowIndex);
     }
     
     @Override
@@ -34,6 +35,16 @@ public class ControllerPublicadoras extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        JcePublicadoras jcePublicadoras = (JcePublicadoras) lista.get( rowIndex);
+        if ( columnIndex == 0 ){
+            return jcePublicadoras.getJceIdpublicadoras();
+        } else if (columnIndex ==1) {
+            return jcePublicadoras.getJceNome();        
+        } else if (columnIndex ==2) {
+            return jcePublicadoras.getJceEmail();
+        } else if (columnIndex ==3) {
+            return jcePublicadoras.getJceTelefone();
+        }
         return "";
     }
 
@@ -49,7 +60,7 @@ public class ControllerPublicadoras extends AbstractTableModel {
             return "email";
         }
         if (column == 3) {
-            return "seed";
+            return "telefone";
         }
         return "";
     }

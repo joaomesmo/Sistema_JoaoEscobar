@@ -17,8 +17,6 @@ public class VendasDAO extends DAOAbstract {
     @Override
     public void insert(Object object) {
         session.beginTransaction();
-        session.flush();
-        session.clear();
         session.save(object);
         session.getTransaction().commit();
     }
