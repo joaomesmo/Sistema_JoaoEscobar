@@ -5,6 +5,7 @@
  */
 package dao;
 
+import bean.JceVendas;
 import bean.JceVendasProdutos;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -46,6 +47,15 @@ public class VendasProdutosDAO extends DAOAbstract {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(JceVendasProdutos.class);
         criteria.add(Restrictions.eq("idVendasProdutos", codigo));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
+    
+    public Object listProdutos(JceVendas jceVendas) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(JceVendasProdutos.class);
+        criteria.add(Restrictions.eq("jcevendas", jceVendas));
         List lista = criteria.list();
         session.getTransaction().commit();
         return lista;

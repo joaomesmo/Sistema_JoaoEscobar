@@ -25,6 +25,7 @@ import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 import controllers.ControllerVendasProdutos;
 import java.util.ArrayList;
+import javax.swing.JTable;
 import pesquisas.JDlgVendasPesquisar;
 import tools.Util;
 
@@ -35,10 +36,10 @@ import tools.Util;
 public class JDlgVendas extends javax.swing.JDialog {
 
     ControllerVendasProdutos controllerVendasProdutos;
+    boolean incluir;
     /**
      * Creates new form JDlgVendas
      */
-    boolean incluir = false;
     
     public JDlgVendas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -63,7 +64,6 @@ public class JDlgVendas extends javax.swing.JDialog {
             jCboPublicadoras.addItem((JcePublicadoras) object);
         }
         
-        
         controllerVendasProdutos = new ControllerVendasProdutos();
         controllerVendasProdutos.setList(new ArrayList());
         jTable1.setModel(controllerVendasProdutos);
@@ -71,12 +71,9 @@ public class JDlgVendas extends javax.swing.JDialog {
     
     public JceVendas viewBean() {
         JceVendas jceVendas = new JceVendas();
-        
         jceVendas.setJceIdvendas(Integer.valueOf(jTxtCodigo.getText()));
-        
         jceVendas.setJceNumpedido(jTxtPedido.getText());
         jceVendas.setJceTotal(Double.valueOf(jFmtTotal.getText()));
-        
         jceVendas.setJceClientes((JceClientes)jCboClientes.getSelectedItem());
         jceVendas.setJcePublicadoras((JcePublicadoras)jCboPublicadoras.getSelectedItem());
         
@@ -84,25 +81,19 @@ public class JDlgVendas extends javax.swing.JDialog {
     }
     
     public void beanView(JceVendas jceVendas, List lista){
-        
-        jTxtCodigo.setText(String.valueOf(jceVendas.getJceIdvendas()));
-        
-        jTxtPedido.setText(jceVendas.getJceNumpedido());
-        //jFmtTotal.setText(jceVendas.getJceTotal());
-        
+        jTxtCodigo.setText(Util.intToStr(jceVendas.getJceIdvendas()));
+        jFmtTotal.setText(Util.doubleToStr(jceVendas.getJceTotal()));
         jCboClientes.setSelectedItem(jceVendas.getJceClientes());
-        jCboPublicadoras.setSelectedItem(jceVendas.getJcePublicadoras());
+        jCboClientes.setSelectedItem(jceVendas.getJceIdvendas());
+        VendasProdutosDAO vendasProdutosDAO = new VendasProdutosDAO();
+        List lista;
+        lista = (List) vendasProdutosDAO.listProdutos(jceVendas);
+        controllerVendasProdutos.setList(lista);
     }
     
-    /*public void addHQs(JceHqs jceHqs, int fcaQuantidade, double jceValor) {
-    JceVendasProdutos jceVendasProdutos = new JceVendasProdutos();
-    JceVendas jceVendas = new JceVendas();
-    
-    jceVendas.setJcePublicadoras(jceHqs);
-    jceVendasProdutos.setJceQuantidade(fcaQuantidade);
-    jceVendasProdutos.setJceValorUnitario(jceValor);
-    controllerVendasProdutos.addBean(jceVendasProdutos);
-    }*/
+    public JTable getjTable1() {
+        return jTable1;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -349,11 +340,14 @@ public class JDlgVendas extends javax.swing.JDialog {
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
-        if (Util.perguntar("Deseja Excluir?") == true) {
+        if (Util.perguntar("Deseja excluir ?") == true) {
             VendasDAO vendasDAO = new VendasDAO();
+            VendasProdutosDAO vendasProdutosDAO = new VendasProdutosDAO();
+            for (int ind = 0; ind < jTable1.getRowCount(); ind++) {
+                JceVendasProdutos jceVendasProdutos = controllerVendasProdutos.getBean(ind);
+                vendasProdutosDAO.delete(jceVendasProdutos);
+            }
             vendasDAO.delete(viewBean());
-        } else {
-            Util.mensagem("Exclusão cancelada.");
         }
         
         Util.habilitar(false, jTxtCodigo, jTxtPedido, jCboClientes,  jCboPublicadoras, jFmtTotal,

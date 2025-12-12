@@ -8,6 +8,11 @@ import pesquisas.JDlgHQsPesquisar;
 import tools.Util;
 import bean.JceHqs;
 import dao.HQsDAO;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -15,6 +20,7 @@ import dao.HQsDAO;
  */
 public class JDlgHQs extends javax.swing.JDialog {
 
+    private MaskFormatter mascaraData;
     boolean incluir;
     /**
      * Creates new form JDlgHQs
@@ -24,6 +30,14 @@ public class JDlgHQs extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro de HQs");
         setLocationRelativeTo(null);
+        try {
+            mascaraData = new MaskFormatter("##/##/####");
+            
+            jFmtDatalancamento.setFormatterFactory(new DefaultFormatterFactory(mascaraData));
+        } catch (ParseException ex) {
+            Logger.getLogger(JDlgUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtCapitulos,  jTxtCriador, jTxtGenero, jFmtDatalancamento,
             jTxtPublicadora,  jTxtTags, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
