@@ -1,5 +1,5 @@
 package bean;
-// Generated 26/11/2025 10:15:25 by Hibernate Tools 4.3.1
+// Generated 12/12/2025 17:07:27 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -23,7 +23,7 @@ public class JceVendasProdutos  implements java.io.Serializable {
      private int idjceVendasProdutos;
      private JceHqs jceHqs;
      private JcePublicadoras jcePublicadoras;
-     private int jceQuantidade;
+     private Integer jceQuantidade;
      private double jceValorUnitario;
 
     public JceVendasProdutos() {
@@ -33,7 +33,7 @@ public class JceVendasProdutos  implements java.io.Serializable {
     public JceVendasProdutos(int idjceVendasProdutos) {
         this.idjceVendasProdutos = idjceVendasProdutos;
     }
-    public JceVendasProdutos(int idjceVendasProdutos, JceHqs jceHqs, JcePublicadoras jcePublicadoras, int jceQuantidade, double jceValorUnitario) {
+    public JceVendasProdutos(int idjceVendasProdutos, JceHqs jceHqs, JcePublicadoras jcePublicadoras, Integer jceQuantidade, double jceValorUnitario) {
        this.idjceVendasProdutos = idjceVendasProdutos;
        this.jceHqs = jceHqs;
        this.jcePublicadoras = jcePublicadoras;
@@ -75,11 +75,11 @@ public class JceVendasProdutos  implements java.io.Serializable {
 
     
     @Column(name="jce_quantidade")
-    public int getJceQuantidade() {
+    public Integer getJceQuantidade() {
         return this.jceQuantidade;
     }
     
-    public void setJceQuantidade(int jceQuantidade) {
+    public void setJceQuantidade(Integer jceQuantidade) {
         this.jceQuantidade = jceQuantidade;
     }
 

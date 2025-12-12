@@ -1,5 +1,5 @@
 package bean;
-// Generated 26/11/2025 10:15:25 by Hibernate Tools 4.3.1
+// Generated 12/12/2025 17:07:27 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -29,7 +29,7 @@ public class JcePublicadoras  implements java.io.Serializable {
      private int jceIdpublicadoras;
      private String jceNome;
      private Date jceCriada;
-     private int jceStatus;
+     private Integer jceStatus;
      private String jceEmail;
      private String jceSenha;
      private String jceTelefone;
@@ -47,7 +47,7 @@ public class JcePublicadoras  implements java.io.Serializable {
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JcePublicadoras(int jceIdpublicadoras, String jceNome, Date jceCriada, int jceStatus, String jceEmail, String jceSenha, String jceTelefone, String jceSeed, String jceDescricao, Set jceVendases, Set jceVendasProdutoses) {
+    public JcePublicadoras(int jceIdpublicadoras, String jceNome, Date jceCriada, Integer jceStatus, String jceEmail, String jceSenha, String jceTelefone, String jceSeed, String jceDescricao) {
        this.jceIdpublicadoras = jceIdpublicadoras;
        this.jceNome = jceNome;
        this.jceCriada = jceCriada;
@@ -93,11 +93,11 @@ public class JcePublicadoras  implements java.io.Serializable {
 
     
     @Column(name="jce_status")
-    public int getJceStatus() {
+    public Integer getJceStatus() {
         return this.jceStatus;
     }
     
-    public void setJceStatus(int jceStatus) {
+    public void setJceStatus(Integer jceStatus) {
         this.jceStatus = jceStatus;
     }
 
@@ -122,7 +122,7 @@ public class JcePublicadoras  implements java.io.Serializable {
     }
 
     
-    @Column(name="jce_telefone", nullable=false, length=10)
+    @Column(name="jce_telefone", nullable=false, length=14)
     public String getJceTelefone() {
         return this.jceTelefone;
     }

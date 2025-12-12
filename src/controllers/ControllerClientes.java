@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import bean.JceClientes;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 /**
@@ -17,8 +18,8 @@ public class ControllerClientes extends AbstractTableModel {
         this.lista = lista;
     }
 
-    public Object getBean(int rowIndex) {
-       return lista.get(rowIndex);    
+    public JceClientes getBean(int rowIndex) {
+       return (JceClientes) lista.get(rowIndex);  
     }
     
     @Override
@@ -33,6 +34,16 @@ public class ControllerClientes extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        JceClientes jceClientes = (JceClientes) lista.get( rowIndex);
+        if ( columnIndex == 0 ){
+            return jceClientes.getIdjceClientes();
+        } else if (columnIndex ==1) {
+            return jceClientes.getJceNome();        
+        } else if (columnIndex ==2) {
+            return jceClientes.getJceApelido();
+        } else if (columnIndex ==3) {
+            return jceClientes.getJceTelefone();
+        }
         return "";
     }
 

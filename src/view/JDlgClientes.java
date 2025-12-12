@@ -20,7 +20,7 @@ import tools.Util;
  */
 public class JDlgClientes extends javax.swing.JDialog {
 
-    private MaskFormatter mascaraDataNasc, mascaraTelefone;
+    private MaskFormatter mascaraDataNasc, mascaraTelefone, mascaraCep;
     boolean incluir;
     /**
      * Creates new form JDlgClientes
@@ -33,49 +33,51 @@ public class JDlgClientes extends javax.swing.JDialog {
         try {
             mascaraDataNasc = new MaskFormatter("##/##/####");
             mascaraTelefone = new MaskFormatter("(##) ####-####");
+            mascaraCep = new MaskFormatter("#####-###");
             
             jFmtDatanasc.setFormatterFactory(new DefaultFormatterFactory(mascaraDataNasc));
             jFmtTelefone.setFormatterFactory(new DefaultFormatterFactory(mascaraTelefone));
+            jFmtCep.setFormatterFactory(new DefaultFormatterFactory(mascaraCep));
         } catch (ParseException ex) {
             Logger.getLogger(JDlgUsuarios.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
-            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jFmtTelefone, jFmtEmail, jCboGenero, jCboStatus, jFmtLocalizacao,jFmtCep,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }
     
     public JceClientes viewBean() {
-        JceClientes jceclientes = new JceClientes();
+        JceClientes jceClientes = new JceClientes();
         int codigo = Util.strToInt(jTxtCodigo.getText());
-        jceclientes.setIdjceClientes(codigo);
-        jceclientes.setJceNome(jTxtNome.getText());
-        jceclientes.setJceApelido(jTxtApelido.getText());
-        //jceclientes.setJceStatus(jCboStatus.getSelectedIndex());
-        jceclientes.setJceData(Util.strToDate(jFmtDatanasc.getText()));   
-        jceclientes.setJceSenha(jPwfSenha.getText());
-        //jceclientes.setJceGenero(jCboGenero.getSelectedIndex());
-        jceclientes.setJceTelefone(jFmtTelefone.getText());
-        jceclientes.setJceLocalizacao(jFmtLocalizacao.getText());
-        //jceclientes.setJceGasto(jFmtGasto.getText());
-        //jceclientes.setJceBio(jTxtBio.getText());
-        return jceclientes;
+        jceClientes.setIdjceClientes(codigo);
+        jceClientes.setJceNome(jTxtNome.getText());
+        jceClientes.setJceApelido(jTxtApelido.getText());
+        jceClientes.setJceEmail(jFmtEmail.getText());
+        jceClientes.setJceSenha(jPwfSenha.getText());
+        jceClientes.setJceData(Util.strToDate(jFmtDatanasc.getText()));
+        jceClientes.setJceTelefone(jFmtTelefone.getText());
+        jceClientes.setJceLocalizacao(jFmtLocalizacao.getText());
+        jceClientes.setJceBio(jTxtBio.getText());
+        jceClientes.setJceStatus(jCboStatus.getSelectedIndex());
+        jceClientes.setJceGenero(jCboGenero.getSelectedIndex());
+        jceClientes.setJceCep(jFmtCep.getText());
+        return jceClientes;
     }
 
-        public void beanView(JceClientes jceclientes) {
-        String codigo = String.valueOf(jceclientes.getIdjceClientes());
-        jTxtCodigo.setText(codigo);
-        jTxtNome.setText(jceclientes.getJceNome());
-        jTxtApelido.setText(jceclientes.getJceApelido());
-        //jCboStatus.setSelectedIndex(jceclientes.getJceStatus());
-        jFmtEmail.setText(jceclientes.getJceEmail());
-        //jPwfSenha.setText(jceclientes.getJceSenha());
-        //jCboGenero.setSelectedIndex(jceclientes.getJceGenero());
-        jFmtDatanasc.setText(Util.dateToStr(jceclientes.getJceData()));
-        jFmtTelefone.setText(jceclientes.getJceTelefone());
-        //String gasto = String.valueOf(jceclientes.getJce);
-        //jFmtGasto.setText(gasto);
-        //jTxtBio.setText(jceclientes.getJce());
+        public void beanView(JceClientes jceClientes) {
+        jTxtCodigo.setText(Util.intToStr(jceClientes.getIdjceClientes()));
+        jTxtNome.setText(jceClientes.getJceNome());
+        jTxtApelido.setText(jceClientes.getJceApelido());
+        jFmtEmail.setText(jceClientes.getJceEmail());
+        jPwfSenha.setText(jceClientes.getJceSenha());
+        jFmtDatanasc.setText(Util.dateToStr(jceClientes.getJceData()));
+        jFmtTelefone.setText(jceClientes.getJceTelefone());
+        jFmtLocalizacao.setText(jceClientes.getJceLocalizacao());
+        jTxtBio.setText(jceClientes.getJceBio());
+        jCboStatus.setSelectedIndex(jceClientes.getJceStatus());
+        jCboGenero.setSelectedIndex(jceClientes.getJceGenero());
+        jFmtCep.setText(jceClientes.getJceCep());
     }
 
     /**
@@ -98,7 +100,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jBtnIncluir = new javax.swing.JButton();
         jFmtEmail = new javax.swing.JFormattedTextField();
         jBtnAlterar = new javax.swing.JButton();
-        jFmtGasto = new javax.swing.JFormattedTextField();
+        jFmtCep = new javax.swing.JFormattedTextField();
         jBtnExcluir = new javax.swing.JButton();
         jTxtCodigo = new javax.swing.JTextField();
         jBtnConfirmar = new javax.swing.JButton();
@@ -140,7 +142,7 @@ public class JDlgClientes extends javax.swing.JDialog {
 
         jLabel32.setBackground(new java.awt.Color(255, 255, 255));
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setText("Dinheiro gasto");
+        jLabel32.setText("cep");
 
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/procurar.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
@@ -173,8 +175,8 @@ public class JDlgClientes extends javax.swing.JDialog {
             }
         });
 
-        jFmtGasto.setBackground(new java.awt.Color(102, 102, 102));
-        jFmtGasto.setForeground(new java.awt.Color(204, 204, 204));
+        jFmtCep.setBackground(new java.awt.Color(102, 102, 102));
+        jFmtCep.setForeground(new java.awt.Color(204, 204, 204));
 
         jBtnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lixo.png"))); // NOI18N
         jBtnExcluir.setText("Excluir");
@@ -302,16 +304,16 @@ public class JDlgClientes extends javax.swing.JDialog {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel22)
                                         .addComponent(jCboGenero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel33)
-                                                .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(289, 289, 289))
-                                        .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jFmtGasto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(132, 132, 132))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jFmtCep)
+                                        .addGap(296, 296, 296))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel33)
+                                            .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel32))
+                                        .addGap(421, 421, 421)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel26)
@@ -377,7 +379,7 @@ public class JDlgClientes extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFmtGasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jFmtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -410,23 +412,21 @@ public class JDlgClientes extends javax.swing.JDialog {
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
-                jFmtTelefone,  jFmtLocalizacao,jFmtGasto, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jFmtTelefone,  jFmtLocalizacao,jFmtCep,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
         ClientesDAO clientesDAO = new ClientesDAO();
-        clientesDAO.insert(viewBean());
-        
         if (incluir == true){
             clientesDAO.insert(viewBean());
         }else{
             clientesDAO.update(viewBean());
         }
-        
+
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
-            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jFmtTelefone,  jFmtLocalizacao,jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
@@ -439,7 +439,7 @@ public class JDlgClientes extends javax.swing.JDialog {
             Util.mensagem("Nao excluido");
         }
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
-            jFmtTelefone,  jFmtLocalizacao,jFmtGasto,jTxtBio, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
+            jFmtTelefone, jFmtLocalizacao,jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
         Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido, jFmtTelefone);
     }//GEN-LAST:event_jBtnExcluirActionPerformed
@@ -447,14 +447,14 @@ public class JDlgClientes extends javax.swing.JDialog {
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
-            jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtGasto,jTxtBio,jBtnIncluir, jBtnAlterar);
+            jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus,jBtnIncluir, jBtnAlterar);
         Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
         Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
-            jPwfSenha, jFmtTelefone,  jFmtLocalizacao,jTxtBio, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
+            jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtCep, jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
@@ -463,7 +463,6 @@ public class JDlgClientes extends javax.swing.JDialog {
         JDlgClientesPesquisar jDlgClientesPesquisar = new JDlgClientesPesquisar(null, true);
         jDlgClientesPesquisar.setTelaPai(this);
         jDlgClientesPesquisar.setVisible(true);
-        Util.mensagem("seleciono nada tio");
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     /**
@@ -517,9 +516,9 @@ public class JDlgClientes extends javax.swing.JDialog {
     private javax.swing.JButton jBtnPesquisar;
     private javax.swing.JComboBox<String> jCboGenero;
     private javax.swing.JComboBox<String> jCboStatus;
+    private javax.swing.JFormattedTextField jFmtCep;
     private javax.swing.JFormattedTextField jFmtDatanasc;
     private javax.swing.JFormattedTextField jFmtEmail;
-    private javax.swing.JFormattedTextField jFmtGasto;
     private javax.swing.JFormattedTextField jFmtLocalizacao;
     private javax.swing.JFormattedTextField jFmtTelefone;
     private javax.swing.JLabel jLabel18;

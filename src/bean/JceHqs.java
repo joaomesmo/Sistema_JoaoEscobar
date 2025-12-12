@@ -1,5 +1,5 @@
 package bean;
-// Generated 26/11/2025 10:15:25 by Hibernate Tools 4.3.1
+// Generated 12/12/2025 17:07:27 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -44,7 +44,7 @@ public class JceHqs  implements java.io.Serializable {
         this.jceCriador = jceCriador;
         this.jcePublicadora = jcePublicadora;
     }
-    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags, Set jceVendasProdutoses) {
+    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags) {
        this.jceIdhqs = jceIdhqs;
        this.jceNome = jceNome;
        this.jceCapitulos = jceCapitulos;
@@ -78,7 +78,7 @@ public class JceHqs  implements java.io.Serializable {
     }
 
     
-    @Column(name="jce_capitulos", nullable=false, precision=22, scale=0)
+    @Column(name="jce_capitulos", nullable=false)
     public int getJceCapitulos() {
         return this.jceCapitulos;
     }

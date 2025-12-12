@@ -1,5 +1,5 @@
 package bean;
-// Generated 26/11/2025 10:15:25 by Hibernate Tools 4.3.1
+// Generated 12/12/2025 17:07:27 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -35,7 +35,7 @@ public class JceClientes  implements java.io.Serializable {
      private String jceBio;
      private int jceStatus;
      private int jceGenero;
-     private String jceGasto;
+     private String jceCep;
 
     public JceClientes() {
     }
@@ -49,7 +49,7 @@ public class JceClientes  implements java.io.Serializable {
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, int jceStatus, int jceGenero, String jceGasto, Set jceVendases) {
+    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, int jceStatus, int jceGenero, String jceCep) {
        this.idjceClientes = idjceClientes;
        this.jceNome = jceNome;
        this.jceApelido = jceApelido;
@@ -61,7 +61,7 @@ public class JceClientes  implements java.io.Serializable {
        this.jceBio = jceBio;
        this.jceStatus = jceStatus;
        this.jceGenero = jceGenero;
-       this.jceGasto = jceGasto;
+       this.jceCep = jceCep;
     }
    
      @Id 
@@ -177,13 +177,13 @@ public class JceClientes  implements java.io.Serializable {
     }
 
     
-    @Column(name="jce_gasto", length=10)
-    public String getJceGasto() {
-        return this.jceGasto;
+    @Column(name="jce_cep", length=9)
+    public String getJceCep() {
+        return this.jceCep;
     }
     
-    public void setJceGasto(String jceGasto) {
-        this.jceGasto = jceGasto;
+    public void setJceCep(String jceCep) {
+        this.jceCep = jceCep;
     }
 }
 
