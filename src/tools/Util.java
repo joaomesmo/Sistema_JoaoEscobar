@@ -7,6 +7,7 @@ package tools;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -25,8 +26,14 @@ public class Util {
     
     public static void limpar(JComponent ... componentes){
         for (int i = 0; i < componentes.length; i++) {
+            if (componentes[i] instanceof JTextField) {
+                ((JTextField) componentes[i]).setText("");
+            }
             if (componentes[i] instanceof JComboBox) {
-            ((JComboBox) componentes[i]).setSelectedIndex(-1);
+                ((JComboBox) componentes[i]).setSelectedIndex(-1);
+            }
+            if (componentes[i] instanceof JCheckBox) {
+                ((JCheckBox) componentes[i]).setSelected(false);
             }
         }
     }

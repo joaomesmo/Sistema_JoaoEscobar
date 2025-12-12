@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import bean.JceHqs;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -12,14 +13,15 @@ import javax.swing.table.AbstractTableModel;
  * @author Caio
  */
 public class ControllerHQs extends AbstractTableModel {
-    List lista;
+    
+    private List lista;
 
     public void setList(List lista) {
         this.lista = lista;
     }
 
-    public Object getBean(int rowIndex) {
-       return lista.get(rowIndex);    
+    public JceHqs getBean(int rowIndex) {
+       return (JceHqs) lista.get(rowIndex);     
     }
     
     @Override
@@ -34,6 +36,16 @@ public class ControllerHQs extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        JceHqs jceHqs = (JceHqs) lista.get( rowIndex);
+        if ( columnIndex == 0 ){
+            return jceHqs.getJceIdhqs();
+        } else if (columnIndex ==1) {
+            return jceHqs.getJceNome();        
+        } else if (columnIndex ==2) {
+            return jceHqs.getJceCriador();
+        } else if (columnIndex ==3) {
+            return jceHqs.getJcePublicadora();
+        }
         return "";
     }
 
@@ -49,7 +61,7 @@ public class ControllerHQs extends AbstractTableModel {
             return "criador";
         }
         if (column == 3) {
-            return "estudio";
+            return "publicadora";
         }
         return "";
     }

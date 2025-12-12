@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import bean.JceUsuarios;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -13,14 +14,14 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ControllerUsuarios extends AbstractTableModel {
 
-    List lista;
+    private List lista;
 
     public void setList(List lista) {
         this.lista = lista;
     }
 
-    public Object getBean(int rowIndex) {
-       return lista.get(rowIndex);    
+    public JceUsuarios getBean(int rowIndex) {
+       return (JceUsuarios) lista.get(rowIndex);   
     }
     
     @Override
@@ -35,6 +36,16 @@ public class ControllerUsuarios extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        JceUsuarios jceUsuarios = (JceUsuarios) lista.get( rowIndex);
+        if ( columnIndex == 0 ){
+            return jceUsuarios.getJceIdusuarios();
+        } else if (columnIndex ==1) {
+            return jceUsuarios.getJceNome();        
+        } else if (columnIndex ==2) {
+            return jceUsuarios.getJceApelido();
+        } else if (columnIndex ==3) {
+            return jceUsuarios.getJceCpf();
+        }
         return "";
     }
 
@@ -43,13 +54,13 @@ public class ControllerUsuarios extends AbstractTableModel {
         if (column == 0) {
             return "Código";
         }
-        if (column == 1) {
+        else if (column == 1) {
             return "Nome";
         }
-        if (column == 2) {
+        else if (column == 2) {
             return "Cpf";
         }
-        if (column == 3) {
+        else if (column == 3) {
             return "Data Nascimento";
         }
         return "";

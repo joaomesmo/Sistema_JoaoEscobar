@@ -26,7 +26,7 @@ public class JceHqs  implements java.io.Serializable {
 
      private int jceIdhqs;
      private String jceNome;
-     private double jceCapitulos;
+     private int jceCapitulos;
      private String jceGenero;
      private Date jceLancamento;
      private String jceCriador;
@@ -37,14 +37,14 @@ public class JceHqs  implements java.io.Serializable {
     }
 
 	
-    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceCriador, String jcePublicadora) {
+    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceCriador, String jcePublicadora) {
         this.jceIdhqs = jceIdhqs;
         this.jceNome = jceNome;
         this.jceCapitulos = jceCapitulos;
         this.jceCriador = jceCriador;
         this.jcePublicadora = jcePublicadora;
     }
-    public JceHqs(int jceIdhqs, String jceNome, double jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags, Set jceVendasProdutoses) {
+    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags, Set jceVendasProdutoses) {
        this.jceIdhqs = jceIdhqs;
        this.jceNome = jceNome;
        this.jceCapitulos = jceCapitulos;
@@ -79,11 +79,11 @@ public class JceHqs  implements java.io.Serializable {
 
     
     @Column(name="jce_capitulos", nullable=false, precision=22, scale=0)
-    public double getJceCapitulos() {
+    public int getJceCapitulos() {
         return this.jceCapitulos;
     }
     
-    public void setJceCapitulos(double jceCapitulos) {
+    public void setJceCapitulos(int jceCapitulos) {
         this.jceCapitulos = jceCapitulos;
     }
 

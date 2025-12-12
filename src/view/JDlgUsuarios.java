@@ -92,7 +92,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         jBtnPesquisar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPswSenha = new javax.swing.JPasswordField();
-        jCboNivel = new javax.swing.JComboBox<String>();
+        jCboNivel = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jChbAtivo = new javax.swing.JCheckBox();
         jBtnIncluir = new javax.swing.JButton();
@@ -141,7 +141,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         jCboNivel.setBackground(new java.awt.Color(0, 0, 0));
         jCboNivel.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jCboNivel.setForeground(new java.awt.Color(255, 255, 255));
-        jCboNivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCboNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jCboNivel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel7.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
@@ -195,6 +195,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         jTxtCodigo.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
         jTxtCodigo.setForeground(new java.awt.Color(255, 255, 255));
         jTxtCodigo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jTxtCodigo.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         jLabel2.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -355,7 +356,8 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPswSenha, jFmtCPF, jFmtDatanasc,
             jCboNivel,  jChbAtivo, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
-        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido, jFmtCPF, jFmtDatanasc, jPswSenha, jCboNivel, jChbAtivo);
+        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido,  jPswSenha, jFmtCPF, jFmtDatanasc,
+            jCboNivel,  jChbAtivo);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
@@ -372,6 +374,8 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPswSenha, jFmtCPF, jFmtDatanasc,
             jCboNivel,  jChbAtivo, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
+        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido,  jPswSenha, jFmtCPF, jFmtDatanasc,
+            jCboNivel,  jChbAtivo);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
@@ -411,9 +415,11 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
         JDlgUsuariosPesquisar jDlgUsuariosPesquisar = new JDlgUsuariosPesquisar(null, true);
-        jDlgUsuariosPesquisar.setTelaPai(this);
+        jDlgUsuariosPesquisar.setTelaAnterior(this);
         jDlgUsuariosPesquisar.setVisible(true);
-        Util.mensagem("seleciono nada");
+        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCPF, jFmtDatanasc,
+            jPswSenha, jCboNivel, jChbAtivo, jBtnAlterar, jBtnCancelar, jBtnExcluir );
+        Util.habilitar(false,jBtnIncluir,jBtnConfirmar,  jBtnPesquisar);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     /**

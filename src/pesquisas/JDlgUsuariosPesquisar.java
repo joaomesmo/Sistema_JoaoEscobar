@@ -9,6 +9,7 @@ import controllers.ControllerUsuarios;
 import java.util.List;
 import tools.Util;
 import bean.JceUsuarios;
+import dao.UsuariosDAO;
 
 /**
  *
@@ -16,7 +17,7 @@ import bean.JceUsuarios;
  */
 public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
     
-    JDlgUsuarios jDlgUsuarios;
+    private JDlgUsuarios jDlgUsuarios;
     ControllerUsuarios controllerUsuarios;
     
     /**
@@ -26,10 +27,17 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();        
         setLocationRelativeTo(null);
+        
+        controllerUsuarios = new ControllerUsuarios();
+        UsuariosDAO usuariosDAO = new UsuariosDAO();
+        List lista = (List) usuariosDAO.listAll();
+        controllerUsuarios.setList(lista);
+        jTable1.setModel(controllerUsuarios);
     }
- 
-    public void setTelaPai(JDlgUsuarios jDlgUsuarios){
-       this.jDlgUsuarios = jDlgUsuarios;
+    
+    
+    public void setTelaAnterior(JDlgUsuarios jDlgUsuarios) {
+        this.jDlgUsuarios = jDlgUsuarios;
     }
 
     /**
@@ -48,10 +56,10 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTable1.setBackground(new java.awt.Color(102, 102, 102));
+        jTable1.setBackground(new java.awt.Color(0, 0, 0));
+        jTable1.setFont(new java.awt.Font("Papyrus", 0, 11)); // NOI18N
         jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -64,6 +72,11 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
                 "Id", "Nome", "Apelido", "Nascimento"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jBtnOk.setBackground(new java.awt.Color(0, 102, 204));
@@ -111,14 +124,21 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
 
     private void jBtnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnOkActionPerformed
         // TODO add your handling code here:
-        /*if (jTable1.getSelectedRow() == -1) {
-            Util.mensagem("nenhuma linha selecionada");
+        if (jTable1.getSelectedRow() == -1) {
+            Util.mensagem("selecione uma linha");
         } else {
-            JceUsuarios jceusuarios =  controllerUsuarios.getBean( jTable1.getSelectedRow() );
-        jDlgUsuarios.beanView(jceusuarios);
-        this.setVisible(false);
-        }*/
+            JceUsuarios jceUsuarios = controllerUsuarios.getBean(jTable1.getSelectedRow());
+            jDlgUsuarios.beanView(jceUsuarios);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jBtnOkActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 2) {
+            jBtnOkActionPerformed(null);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
