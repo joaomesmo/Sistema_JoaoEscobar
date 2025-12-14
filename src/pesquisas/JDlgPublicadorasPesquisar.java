@@ -77,7 +77,9 @@ public class JDlgPublicadorasPesquisar extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jBtnOk.setBackground(new java.awt.Color(0, 102, 204));
+        jBtnOk.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnOk.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnOk.setForeground(new java.awt.Color(255, 255, 255));
         jBtnOk.setText("Ok");
         jBtnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -111,62 +111,86 @@ public class JDlgHQs extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jTxtPublicadora.setBackground(new java.awt.Color(102, 102, 102));
-        jTxtPublicadora.setForeground(new java.awt.Color(204, 204, 204));
+        jTxtPublicadora.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtPublicadora.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtPublicadora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        jTxtCapitulos.setBackground(new java.awt.Color(102, 102, 102));
-        jTxtCapitulos.setForeground(new java.awt.Color(204, 204, 204));
+        jTxtCapitulos.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtCapitulos.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtCapitulos.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtCapitulos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        jTxtCriador.setBackground(new java.awt.Color(102, 102, 102));
-        jTxtCriador.setForeground(new java.awt.Color(204, 204, 204));
+        jTxtCriador.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtCriador.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtCriador.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtCriador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        jTxtGenero.setBackground(new java.awt.Color(102, 102, 102));
-        jTxtGenero.setForeground(new java.awt.Color(204, 204, 204));
+        jTxtGenero.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtGenero.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtGenero.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtGenero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("capitulos da HQ");
+        jLabel9.setText("Capitulos da HQ");
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("genero da HQ");
+        jLabel10.setText("Genero da HQ");
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("estudio");
+        jLabel14.setText("Estudio");
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("criador");
+        jLabel13.setText("Criador");
 
-        jTxtTags.setBackground(new java.awt.Color(102, 102, 102));
-        jTxtTags.setForeground(new java.awt.Color(204, 204, 204));
+        jTxtTags.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtTags.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtTags.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtTags.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        jFmtDatalancamento.setBackground(new java.awt.Color(102, 102, 102));
-        jFmtDatalancamento.setForeground(new java.awt.Color(204, 204, 204));
+        jFmtDatalancamento.setBackground(new java.awt.Color(0, 0, 0));
+        jFmtDatalancamento.setForeground(new java.awt.Color(255, 255, 255));
+        jFmtDatalancamento.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
 
         jTxtNome.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtNome.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
         jTxtNome.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jTxtCodigo.setBackground(new java.awt.Color(0, 0, 0));
         jTxtCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtCodigo.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("nome da HQ");
+        jLabel8.setText("Nome da HQ");
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("id");
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("data de lançamento");
+        jLabel11.setText("Data de lançamento");
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("tags");
+        jLabel12.setText("Tags");
 
+        jBtnExcluir.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnExcluir.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnExcluir.setForeground(new java.awt.Color(255, 255, 255));
         jBtnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lixo.png"))); // NOI18N
         jBtnExcluir.setText("Excluir");
         jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -175,6 +199,9 @@ public class JDlgHQs extends javax.swing.JDialog {
             }
         });
 
+        jBtnAlterar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnAlterar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnAlterar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapis.png"))); // NOI18N
         jBtnAlterar.setText("Alterar");
         jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +210,9 @@ public class JDlgHQs extends javax.swing.JDialog {
             }
         });
 
+        jBtnIncluir.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnIncluir.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnIncluir.setForeground(new java.awt.Color(255, 255, 255));
         jBtnIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/download.png"))); // NOI18N
         jBtnIncluir.setText("Incluir");
         jBtnIncluir.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +221,9 @@ public class JDlgHQs extends javax.swing.JDialog {
             }
         });
 
+        jBtnConfirmar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnConfirmar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/verificar.png"))); // NOI18N
         jBtnConfirmar.setText("Confirmar");
         jBtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -199,6 +232,9 @@ public class JDlgHQs extends javax.swing.JDialog {
             }
         });
 
+        jBtnCancelar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnCancelar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/x.png"))); // NOI18N
         jBtnCancelar.setText("Cancelar");
         jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -207,6 +243,9 @@ public class JDlgHQs extends javax.swing.JDialog {
             }
         });
 
+        jBtnPesquisar.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnPesquisar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnPesquisar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/procurar.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
         jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -243,27 +282,27 @@ public class JDlgHQs extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jBtnPesquisar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel11)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTxtNome)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jFmtDatalancamento, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTxtCapitulos)
-                                        .addComponent(jTxtCriador, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel9))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTxtPublicadora)
-                                    .addComponent(jTxtGenero)
+                                    .addComponent(jFmtDatalancamento)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel14))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel8))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jTxtCriador)
+                                    .addComponent(jTxtCapitulos, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTxtPublicadora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel10)
+                                        .addComponent(jTxtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel14))))))
                     .addComponent(jTxtTags))
                 .addContainerGap())
         );
@@ -281,24 +320,24 @@ public class JDlgHQs extends javax.swing.JDialog {
                                 .addComponent(jLabel11)
                                 .addGap(46, 46, 46))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jFmtDatalancamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTxtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtCapitulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTxtCapitulos)
+                                    .addComponent(jTxtGenero))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel14))
                                 .addGap(3, 3, 3)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTxtCriador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtPublicadora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTxtCriador)
+                                    .addComponent(jTxtPublicadora))
+                                .addGap(18, 18, 18))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jFmtDatalancamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)))
                         .addComponent(jLabel12)
                         .addGap(8, 8, 8))

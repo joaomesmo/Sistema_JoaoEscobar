@@ -43,11 +43,12 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
 
-        jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setForeground(new java.awt.Color(204, 204, 204));
+        jTable1.setBackground(new java.awt.Color(0, 0, 0));
+        jTable1.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -61,7 +62,9 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jBtnOK.setBackground(new java.awt.Color(0, 102, 204));
+        jBtnOK.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnOK.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnOK.setForeground(new java.awt.Color(255, 255, 255));
         jBtnOK.setText("OK");
         jBtnOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

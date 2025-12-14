@@ -32,12 +32,12 @@ public class JFrmMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jBtnUsuarios = new javax.swing.JButton();
-        jBtnVendas = new javax.swing.JButton();
-        jBtnHQs = new javax.swing.JButton();
-        jBtnPublicadoras = new javax.swing.JButton();
-        jBtnSair = new javax.swing.JButton();
+        jToolBar1 = new javax.swing.JToolBar();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -58,64 +58,46 @@ public class JFrmMenu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jToolBar1.setBackground(new java.awt.Color(0, 0, 0));
+        jToolBar1.setRollover(true);
 
-        jBtnUsuarios.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnUsuarios.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
-        jBtnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnUsuarios.setText("Usuarios");
-        jBtnUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUsuariosActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jBtnUsuarios);
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/do-utilizador.png"))); // NOI18N
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton1);
 
-        jBtnVendas.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnVendas.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
-        jBtnVendas.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnVendas.setText("Vendas");
-        jBtnVendas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnVendasActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jBtnVendas);
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/livros.png"))); // NOI18N
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton2);
 
-        jBtnHQs.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnHQs.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
-        jBtnHQs.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnHQs.setText("HQs");
-        jBtnHQs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnHQsActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jBtnHQs);
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/banco.png"))); // NOI18N
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton3);
 
-        jBtnPublicadoras.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnPublicadoras.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
-        jBtnPublicadoras.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnPublicadoras.setText("Publicadoras");
-        jBtnPublicadoras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPublicadorasActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jBtnPublicadoras);
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aperto-de-mao.png"))); // NOI18N
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton4);
 
-        jBtnSair.setBackground(new java.awt.Color(0, 0, 0));
-        jBtnSair.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
-        jBtnSair.setForeground(new java.awt.Color(255, 255, 255));
-        jBtnSair.setText("Sair");
-        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnSairActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jBtnSair);
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dolar.png"))); // NOI18N
+        jButton5.setFocusable(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton5);
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 830, 1170, -1));
+        jPanel1.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 860, 780, 40));
 
         jLabel2.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
@@ -190,7 +172,7 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenu2.setText("Telas (dnv)");
 
         jMnuVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
-        jMnuVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/banco.png"))); // NOI18N
+        jMnuVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aperto-de-mao.png"))); // NOI18N
         jMnuVendas.setText("Vendas");
         jMnuVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +182,7 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenu2.add(jMnuVendas);
 
         jMnuVendasProdutos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.ALT_MASK));
-        jMnuVendasProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aperto-de-mao.png"))); // NOI18N
+        jMnuVendasProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dolar.png"))); // NOI18N
         jMnuVendasProdutos.setText("Vendas  Produtos");
         jMnuVendasProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,31 +241,6 @@ public class JFrmMenu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMnuSairActionPerformed
 
-    private void jBtnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUsuariosActionPerformed
-        // TODO add your handling code here:
-        jMnuUsuarios.doClick();
-    }//GEN-LAST:event_jBtnUsuariosActionPerformed
-
-    private void jBtnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnVendasActionPerformed
-        // TODO add your handling code here:
-        jMnuSair.doClick();
-    }//GEN-LAST:event_jBtnVendasActionPerformed
-
-    private void jBtnHQsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHQsActionPerformed
-        // TODO add your handling code here:
-        jMnuHQs.doClick();
-    }//GEN-LAST:event_jBtnHQsActionPerformed
-
-    private void jBtnPublicadorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPublicadorasActionPerformed
-        // TODO add your handling code here:
-        jMnuProdutoras.doClick();
-    }//GEN-LAST:event_jBtnPublicadorasActionPerformed
-
-    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
-        // TODO add your handling code here:
-        jMnuSair.doClick();
-    }//GEN-LAST:event_jBtnSairActionPerformed
-
     private void jMnuVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuVendasActionPerformed
         // TODO add your handling code here:
         JDlgVendas jDlgVendas = new JDlgVendas(null, true);
@@ -332,11 +289,11 @@ public class JFrmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnHQs;
-    private javax.swing.JButton jBtnPublicadoras;
-    private javax.swing.JButton jBtnSair;
-    private javax.swing.JButton jBtnUsuarios;
-    private javax.swing.JButton jBtnVendas;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -352,7 +309,7 @@ public class JFrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMnuVendas;
     private javax.swing.JMenuItem jMnuVendasProdutos;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

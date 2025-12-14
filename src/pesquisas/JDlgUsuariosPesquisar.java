@@ -59,6 +59,7 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jTable1.setBackground(new java.awt.Color(0, 0, 0));
+        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         jTable1.setFont(new java.awt.Font("Papyrus", 0, 11)); // NOI18N
         jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -79,7 +80,9 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jBtnOk.setBackground(new java.awt.Color(0, 102, 204));
+        jBtnOk.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnOk.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jBtnOk.setForeground(new java.awt.Color(255, 255, 255));
         jBtnOk.setText("Ok");
         jBtnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
