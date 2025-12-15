@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
-import pesquisas.JDlgPublicadorasPesquisar;
+import viewPesquisas.JDlgPublicadorasPesquisar;
 import tools.Util;
 
 /**

@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
-import pesquisas.JDlgClientesPesquisar;
+import viewPesquisas.JDlgClientesPesquisar;
 import tools.Util;
 
 /**
@@ -96,7 +96,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jLabel21 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jBtnPesquisar = new javax.swing.JButton();
-        jCboStatus = new javax.swing.JComboBox<String>();
+        jCboStatus = new javax.swing.JComboBox<>();
         jBtnIncluir = new javax.swing.JButton();
         jFmtEmail = new javax.swing.JFormattedTextField();
         jBtnAlterar = new javax.swing.JButton();
@@ -111,7 +111,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jLabel33 = new javax.swing.JLabel();
         jFmtTelefone = new javax.swing.JFormattedTextField();
         jTxtApelido = new javax.swing.JTextField();
-        jCboGenero = new javax.swing.JComboBox<String>();
+        jCboGenero = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         jFmtLocalizacao = new javax.swing.JFormattedTextField();
         jPwfSenha = new javax.swing.JPasswordField();
@@ -164,7 +164,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jCboStatus.setBackground(new java.awt.Color(0, 0, 0));
         jCboStatus.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jCboStatus.setForeground(new java.awt.Color(255, 255, 255));
-        jCboStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Leitor", "Tradutor" }));
+        jCboStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Leitor", "Tradutor" }));
         jCboStatus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jBtnIncluir.setBackground(new java.awt.Color(0, 0, 0));
@@ -267,7 +267,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jCboGenero.setBackground(new java.awt.Color(0, 0, 0));
         jCboGenero.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jCboGenero.setForeground(new java.awt.Color(255, 255, 255));
-        jCboGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-----------", "masculino", "feminino" }));
+        jCboGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----------", "masculino", "feminino" }));
         jCboGenero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
@@ -297,7 +297,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Nome (não pode ser mudado)");
+        jLabel18.setText("Nome");
 
         jLabel26.setBackground(new java.awt.Color(255, 255, 255));
         jLabel26.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
@@ -456,6 +456,8 @@ public class JDlgClientes extends javax.swing.JDialog {
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
             jFmtTelefone,  jFmtLocalizacao,jFmtCep,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
+        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
+            jFmtTelefone, jFmtLocalizacao,jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
@@ -470,6 +472,8 @@ public class JDlgClientes extends javax.swing.JDialog {
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
             jFmtTelefone,  jFmtLocalizacao,jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
+        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
+            jFmtTelefone, jFmtLocalizacao,jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
@@ -483,7 +487,8 @@ public class JDlgClientes extends javax.swing.JDialog {
         Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
             jFmtTelefone, jFmtLocalizacao,jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar);
         Util.habilitar(true,jBtnIncluir,jBtnAlterar,  jBtnPesquisar);
-        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido, jFmtTelefone);
+        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
+            jFmtTelefone, jFmtLocalizacao,jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus);
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed

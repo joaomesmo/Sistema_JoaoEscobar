@@ -23,10 +23,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
-import controllers.ControllerVendasProdutos;
+import viewControllers.ControllerVendasProdutos;
 import java.util.ArrayList;
 import javax.swing.JTable;
-import pesquisas.JDlgVendasPesquisar;
+import viewPesquisas.JDlgVendasPesquisar;
 import tools.Util;
 
 /**

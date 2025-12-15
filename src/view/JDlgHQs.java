@@ -4,7 +4,7 @@
  */
 package view;
 
-import pesquisas.JDlgHQsPesquisar;
+import viewPesquisas.JDlgHQsPesquisar;
 import tools.Util;
 import bean.JceHqs;
 import dao.HQsDAO;
@@ -112,6 +112,7 @@ public class JDlgHQs extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jTxtPublicadora.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtPublicadora.setFont(new java.awt.Font("Papyrus", 0, 11)); // NOI18N
         jTxtPublicadora.setForeground(new java.awt.Color(255, 255, 255));
         jTxtPublicadora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 

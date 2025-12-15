@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package pesquisas;
+package viewPesquisas;
 
 import bean.JcePublicadoras;
 import view.JDlgPublicadoras;
-import controllers.ControllerPublicadoras;
-import controllers.ControllerPublicadoras;
+import viewControllers.ControllerPublicadoras;
+import viewControllers.ControllerPublicadoras;
 import dao.PublicadorasDAO;
 import java.util.List;
 import tools.Util;

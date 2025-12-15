@@ -2,26 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controllers;
+package viewControllers;
 
-import bean.JceUsuarios;
+import bean.JceHqs;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author marcos
+ * @author Caio
  */
-public class ControllerUsuarios extends AbstractTableModel {
-
+public class ControllerHQs extends AbstractTableModel {
+    
     private List lista;
 
     public void setList(List lista) {
         this.lista = lista;
     }
 
-    public JceUsuarios getBean(int rowIndex) {
-       return (JceUsuarios) lista.get(rowIndex);   
+    public JceHqs getBean(int rowIndex) {
+       return (JceHqs) lista.get(rowIndex);     
     }
     
     @Override
@@ -36,15 +36,15 @@ public class ControllerUsuarios extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        JceUsuarios jceUsuarios = (JceUsuarios) lista.get( rowIndex);
+        JceHqs jceHqs = (JceHqs) lista.get( rowIndex);
         if ( columnIndex == 0 ){
-            return jceUsuarios.getJceIdusuarios();
+            return jceHqs.getJceIdhqs();
         } else if (columnIndex ==1) {
-            return jceUsuarios.getJceNome();        
+            return jceHqs.getJceNome();        
         } else if (columnIndex ==2) {
-            return jceUsuarios.getJceApelido();
+            return jceHqs.getJceCriador();
         } else if (columnIndex ==3) {
-            return jceUsuarios.getJceCpf();
+            return jceHqs.getJcePublicadora();
         }
         return "";
     }
@@ -54,14 +54,14 @@ public class ControllerUsuarios extends AbstractTableModel {
         if (column == 0) {
             return "Código";
         }
-        else if (column == 1) {
+        if (column == 1) {
             return "Nome";
         }
-        else if (column == 2) {
-            return "Cpf";
+        if (column == 2) {
+            return "criador";
         }
-        else if (column == 3) {
-            return "Data Nascimento";
+        if (column == 3) {
+            return "publicadora";
         }
         return "";
     }

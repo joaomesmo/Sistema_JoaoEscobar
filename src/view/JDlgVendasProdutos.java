@@ -4,20 +4,38 @@
  */
 package view;
 
+import java.util.List;
+import tools.Util;
+import bean.JceHqs;
+import dao.HQsDAO;
+
 /**
  *
  * @author Caio
  */
 public class JDlgVendasProdutos extends javax.swing.JDialog {
 
+    JDlgVendas jDlgVendas;
+    boolean incluir;
     /**
      * Creates new form JDlgVendasProdutos
      */
     public JDlgVendasProdutos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setTitle("Vendas de produtos");
+        setTitle("Vendas Produtos");
         setLocationRelativeTo(null);
+        Util.habilitar(false, jTxtValor, jTxtTotal);
+        jTxtQuantidade.setText("1");
+        HQsDAO hqsDAO = new HQsDAO();
+        List lista = (List) hqsDAO.listAll();
+        for (Object object : lista) {
+            jCboProdutos.addItem((JceHqs) object);
+        }
+    }
+
+    public void setTelaAnterior(JDlgVendas jDlgVendas) {
+        this.jDlgVendas = jDlgVendas;
     }
 
     /**
@@ -31,9 +49,9 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jBtnCancelar = new javax.swing.JButton();
-        jTxtToral = new javax.swing.JTextField();
+        jTxtTotal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jCBoProdutos = new javax.swing.JComboBox<String>();
+        jCboProdutos = new javax.swing.JComboBox<>();
         jBtnConfirmar = new javax.swing.JButton();
         jTxtValor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -52,25 +70,30 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
         jBtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/x.png"))); // NOI18N
         jBtnCancelar.setText("cancelar");
 
-        jTxtToral.setBackground(new java.awt.Color(0, 0, 0));
-        jTxtToral.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
-        jTxtToral.setForeground(new java.awt.Color(255, 255, 255));
-        jTxtToral.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jTxtTotal.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtTotal.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
+        jTxtTotal.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel4.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("valor total");
 
-        jCBoProdutos.setBackground(new java.awt.Color(0, 0, 0));
-        jCBoProdutos.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
-        jCBoProdutos.setForeground(new java.awt.Color(255, 255, 255));
-        jCBoProdutos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jCboProdutos.setBackground(new java.awt.Color(0, 0, 0));
+        jCboProdutos.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jCboProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        jCboProdutos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jBtnConfirmar.setBackground(new java.awt.Color(0, 0, 0));
         jBtnConfirmar.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
         jBtnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/verificar.png"))); // NOI18N
         jBtnConfirmar.setText("confirmar");
+        jBtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnConfirmarActionPerformed(evt);
+            }
+        });
 
         jTxtValor.setBackground(new java.awt.Color(0, 0, 0));
         jTxtValor.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
@@ -101,7 +124,7 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jCBoProdutos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCboProdutos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -120,7 +143,7 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addComponent(jTxtToral, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jTxtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -129,7 +152,7 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCBoProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCboProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -139,7 +162,7 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTxtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtToral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnCancelar)
@@ -160,6 +183,10 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,14 +234,14 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancelar;
     private javax.swing.JButton jBtnConfirmar;
-    private javax.swing.JComboBox<String> jCBoProdutos;
+    private javax.swing.JComboBox<String> jCboProdutos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTxtQuantidade;
-    private javax.swing.JTextField jTxtToral;
+    private javax.swing.JTextField jTxtTotal;
     private javax.swing.JTextField jTxtValor;
     // End of variables declaration//GEN-END:variables
 }

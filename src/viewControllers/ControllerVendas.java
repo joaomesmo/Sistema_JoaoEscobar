@@ -2,26 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controllers;
+package viewControllers;
 
-import bean.JceHqs;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Caio
+ * @author u07881654104
  */
-public class ControllerHQs extends AbstractTableModel {
-    
-    private List lista;
+public class ControllerVendas extends AbstractTableModel {
+
+    List lista;
 
     public void setList(List lista) {
         this.lista = lista;
     }
 
-    public JceHqs getBean(int rowIndex) {
-       return (JceHqs) lista.get(rowIndex);     
+    public Object getBean(int rowIndex) {
+       return lista.get(rowIndex);    
     }
     
     @Override
@@ -36,16 +35,6 @@ public class ControllerHQs extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        JceHqs jceHqs = (JceHqs) lista.get( rowIndex);
-        if ( columnIndex == 0 ){
-            return jceHqs.getJceIdhqs();
-        } else if (columnIndex ==1) {
-            return jceHqs.getJceNome();        
-        } else if (columnIndex ==2) {
-            return jceHqs.getJceCriador();
-        } else if (columnIndex ==3) {
-            return jceHqs.getJcePublicadora();
-        }
         return "";
     }
 
@@ -55,13 +44,13 @@ public class ControllerHQs extends AbstractTableModel {
             return "Código";
         }
         if (column == 1) {
-            return "Nome";
+            return "Numero do pedido";
         }
         if (column == 2) {
-            return "criador";
+            return "Clientes";
         }
         if (column == 3) {
-            return "publicadora";
+            return "Produtoras";
         }
         return "";
     }

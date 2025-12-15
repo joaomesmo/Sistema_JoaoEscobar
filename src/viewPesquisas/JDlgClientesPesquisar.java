@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package pesquisas;
+package viewPesquisas;
 
 import view.JDlgClientes;
-import controllers.ControllerClientes;
+import viewControllers.ControllerClientes;
 import java.util.List;
 
 /**

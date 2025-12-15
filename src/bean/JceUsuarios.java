@@ -134,10 +134,4 @@ public class JceUsuarios  implements java.io.Serializable {
     public void setJceAtivo(String jceAtivo) {
         this.jceAtivo = jceAtivo;
     }
-
-
-
-
 }
-
-
