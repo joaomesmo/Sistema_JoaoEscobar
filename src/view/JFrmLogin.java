@@ -6,6 +6,9 @@
 package view;
 
 import javax.swing.JOptionPane;
+import bean.JceUsuarios;
+import dao.UsuariosDAO;
+import java.util.List;
 
 /**
  *
@@ -13,7 +16,6 @@ import javax.swing.JOptionPane;
  */
 public class JFrmLogin extends javax.swing.JFrame {
 
-    String nome = "joao", senha = "sim";
     int tentativas = 0;
     /**
      * Creates new form JFrmLogin
@@ -24,6 +26,17 @@ public class JFrmLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         jTxtUsuario.addActionListener(evt -> jPswSenha.requestFocus());
         jPswSenha.addActionListener(evt -> jBtnEntrar.requestFocus());
+    }
+    
+    public JceUsuarios viewBean(){
+        String nome = jTxtUsuario.getText();
+        String senha = jPswSenha.getText();
+        
+        JceUsuarios jceUsuarios = new JceUsuarios();
+        jceUsuarios.setJceNome(nome);
+        jceUsuarios.setJceSenha(senha);
+        
+        return jceUsuarios;
     }
 
     /**
@@ -137,6 +150,9 @@ public class JFrmLogin extends javax.swing.JFrame {
 
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
         // TODO add your handling code here:
+        JceUsuarios jceUsuarios = viewBean();
+        UsuariosDAO usuariosDAO = new UsuariosDAO();
+        
         if(jTxtUsuario.getText().equals("joao") && jPswSenha.getText().equals("sim")){
             JFrmMenu jFrmMenu = new JFrmMenu();
             jFrmMenu.setVisible(true); this.setVisible(false);

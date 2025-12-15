@@ -164,15 +164,15 @@ public class JDlgConsultasHQs extends javax.swing.JDialog {
         // TODO add your handling code here:
         if ((jTxtNome.getText().isEmpty() == false)
                 && (jTxtCriador.getText().isEmpty() == false)){
-        List lista = (List) hqsDAO.listNomeHC(jTxtNome.getText(),
+        List lista = (List) hqsDAO.listNomeCriador(jTxtNome.getText(),
                 Util.strToDouble(jTxtCriador.getText()));
         }
         
         if (jTxtNome.getText().isEmpty() == false) {
-            List lista = (List) hqsDAO.listNomeH(jTxtNome.getText());
+            List lista = (List) hqsDAO.listNome(jTxtNome.getText());
        controllerHQs.setList(lista);
         } else if (jTxtNome.getText().isEmpty() == false) {
-            List lista = (List) hqsDAO.listNomeC(jTxtCriador.getText());
+            List lista = (List) hqsDAO.listCriador(jTxtCriador.getText());
        controllerHQs.setList(lista);
         }
     }//GEN-LAST:event_jBtnConsultaActionPerformed

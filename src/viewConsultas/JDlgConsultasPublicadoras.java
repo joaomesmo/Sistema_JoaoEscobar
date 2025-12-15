@@ -4,8 +4,8 @@
  */
 package viewConsultas;
 
-import viewControllers.ControllerUsuarios;
-import dao.UsuariosDAO;
+import viewControllers.ControllerPublicadoras;
+import dao.PublicadorasDAO;
 import java.util.List;
 import tools.Util;
 
@@ -13,24 +13,24 @@ import tools.Util;
  *
  * @author Marcos
  */
-public class JDlgConsultasUsuarios extends javax.swing.JDialog {
+public class JDlgConsultasPublicadoras extends javax.swing.JDialog {
 
     /**
      * Creates new form JDlgUsuariosPesquisar
      */
-    ControllerUsuarios controllerUsuarios;
-    UsuariosDAO usuariosDAO;
+    ControllerPublicadoras controllerPublicadoras;
+    PublicadorasDAO publicadorasDAO;
 
-    public JDlgConsultasUsuarios(java.awt.Frame parent, boolean modal) {
+    public JDlgConsultasPublicadoras(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Pesquisar Usuarios");
-        controllerUsuarios = new ControllerUsuarios();
-        usuariosDAO = new UsuariosDAO();
-        List lista = (List) usuariosDAO.listAll();
-        controllerUsuarios.setList(lista);
-        jTable1.setModel(controllerUsuarios);
+        controllerPublicadoras = new ControllerPublicadoras();
+        publicadorasDAO = new PublicadorasDAO();
+        List lista = (List) publicadorasDAO.listAll();
+        controllerPublicadoras.setList(lista);
+        jTable1.setModel(controllerPublicadoras);
     }
 
     /**
@@ -47,7 +47,7 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
         jBtnOk = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTxtNome = new javax.swing.JTextField();
-        jTxtCriador = new javax.swing.JTextField();
+        jTxtEmail = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jBtnConsulta = new javax.swing.JButton();
         jBtnImprimir = new javax.swing.JButton();
@@ -79,9 +79,9 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setText("Nome HQ");
+        jLabel1.setText("Nome");
 
-        jLabel2.setText("Nome Criador");
+        jLabel2.setText("Email");
 
         jBtnConsulta.setText("Conusultar");
         jBtnConsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTxtCriador, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jBtnConsulta))
                             .addComponent(jLabel2))))
@@ -134,7 +134,7 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtCriador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtnConsulta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,17 +163,17 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
     private void jBtnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultaActionPerformed
         // TODO add your handling code here:
         if ((jTxtNome.getText().isEmpty() == false)
-                && (jTxtCriador.getText().isEmpty() == false)){
-        List lista = (List) usuariosDAO.listNomeApelido(jTxtNome.getText(),
-                Util.strToDouble(jTxtCriador.getText()));
+                && (jTxtEmail.getText().isEmpty() == false)){
+        List lista = (List) publicadorasDAO.listNomeEmail(jTxtNome.getText(),
+                Util.strToDouble(jTxtEmail.getText()));
         }
         
         if (jTxtNome.getText().isEmpty() == false) {
-            List lista = (List) usuariosDAO.listNome(jTxtNome.getText());
-       controllerUsuarios.setList(lista);
+            List lista = (List) publicadorasDAO.listNome(jTxtNome.getText());
+       controllerPublicadoras.setList(lista);
         } else if (jTxtNome.getText().isEmpty() == false) {
-            List lista = (List) usuariosDAO.listApelido(jTxtCriador.getText());
-       controllerUsuarios.setList(lista);
+            List lista = (List) publicadorasDAO.listEmail(jTxtEmail.getText());
+       controllerPublicadoras.setList(lista);
         }
     }//GEN-LAST:event_jBtnConsultaActionPerformed
 
@@ -199,14 +199,78 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasPublicadoras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasPublicadoras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasPublicadoras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasPublicadoras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -275,7 +339,7 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JDlgConsultasUsuarios dialog = new JDlgConsultasUsuarios(new javax.swing.JFrame(), true);
+                JDlgConsultasPublicadoras dialog = new JDlgConsultasPublicadoras(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -295,7 +359,7 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTxtCriador;
+    private javax.swing.JTextField jTxtEmail;
     private javax.swing.JTextField jTxtNome;
     // End of variables declaration//GEN-END:variables
 }

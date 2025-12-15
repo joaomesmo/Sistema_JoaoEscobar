@@ -49,6 +49,34 @@ public class ClientesDAO extends DAOAbstract {
         session.getTransaction().commit();
         return lista;
     }
+    
+    public Object listNome(String nome) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("jceNome", "%"+"%"));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
+    
+    public Object listApelido(String nome) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("jceApelido", "%"+"%"));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
+    
+    public Object listNomeApelido(String nome, double valorUnitario) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("jceNome", "%"+"%"));
+        criteria.add(Restrictions.like("jceApelido", "%"+"%"));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
 
     @Override
     public Object listAll() {

@@ -51,7 +51,7 @@ public class UsuariosDAO extends DAOAbstract {
         return lista;
     }
     
-    public Object listNomeN(String nome) {
+    public Object listNome(String nome) {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(HQsDAO.class);
         criteria.add(Restrictions.like("jceNome", "%"+"%"));
@@ -60,7 +60,7 @@ public class UsuariosDAO extends DAOAbstract {
         return lista;
     }
     
-    public Object listNomeA(String nome) {
+    public Object listApelido(String nome) {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(HQsDAO.class);
         criteria.add(Restrictions.like("jceApelido", "%"+"%"));
@@ -69,7 +69,7 @@ public class UsuariosDAO extends DAOAbstract {
         return lista;
     }
     
-    public Object listNomeNA(String nome, double valorUnitario) {
+    public Object listNomeApelido(String nome, double valorUnitario) {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(HQsDAO.class);
         criteria.add(Restrictions.like("jceNome", "%"+"%"));

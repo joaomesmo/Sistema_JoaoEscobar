@@ -49,6 +49,34 @@ public class PublicadorasDAO extends DAOAbstract{
         session.getTransaction().commit();
         return lista;
     }
+    
+    public Object listNome(String nome) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("jceNome", "%"+"%"));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
+    
+    public Object listEmail(String nome) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("jceEmail", "%"+"%"));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
+    
+    public Object listNomeEmail(String nome, double valorUnitario) {
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(HQsDAO.class);
+        criteria.add(Restrictions.like("jceNome", "%"+"%"));
+        criteria.add(Restrictions.like("jceEmail", "%"+"%"));
+        List lista = criteria.list();
+        session.getTransaction().commit();
+        return lista;
+    }
 
     @Override
     public Object listAll() {

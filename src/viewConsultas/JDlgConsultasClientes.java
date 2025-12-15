@@ -4,8 +4,8 @@
  */
 package viewConsultas;
 
-import viewControllers.ControllerUsuarios;
-import dao.UsuariosDAO;
+import viewControllers.ControllerClientes;
+import dao.ClientesDAO;
 import java.util.List;
 import tools.Util;
 
@@ -13,24 +13,24 @@ import tools.Util;
  *
  * @author Marcos
  */
-public class JDlgConsultasUsuarios extends javax.swing.JDialog {
+public class JDlgConsultasClientes extends javax.swing.JDialog {
 
     /**
      * Creates new form JDlgUsuariosPesquisar
      */
-    ControllerUsuarios controllerUsuarios;
-    UsuariosDAO usuariosDAO;
+    ControllerClientes controllerClientes;
+    ClientesDAO clientesDAO;
 
-    public JDlgConsultasUsuarios(java.awt.Frame parent, boolean modal) {
+    public JDlgConsultasClientes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Pesquisar Usuarios");
-        controllerUsuarios = new ControllerUsuarios();
-        usuariosDAO = new UsuariosDAO();
-        List lista = (List) usuariosDAO.listAll();
-        controllerUsuarios.setList(lista);
-        jTable1.setModel(controllerUsuarios);
+        setTitle("Pesquisar Clientes");
+        controllerClientes = new ControllerClientes();
+        clientesDAO = new ClientesDAO();
+        List lista = (List) clientesDAO.listAll();
+        controllerClientes.setList(lista);
+        jTable1.setModel(controllerClientes);
     }
 
     /**
@@ -164,16 +164,16 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
         // TODO add your handling code here:
         if ((jTxtNome.getText().isEmpty() == false)
                 && (jTxtCriador.getText().isEmpty() == false)){
-        List lista = (List) usuariosDAO.listNomeApelido(jTxtNome.getText(),
+        List lista = (List) clientesDAO.listNomeApelido(jTxtNome.getText(),
                 Util.strToDouble(jTxtCriador.getText()));
         }
         
         if (jTxtNome.getText().isEmpty() == false) {
-            List lista = (List) usuariosDAO.listNome(jTxtNome.getText());
-       controllerUsuarios.setList(lista);
+            List lista = (List) clientesDAO.listNome(jTxtNome.getText());
+       controllerClientes.setList(lista);
         } else if (jTxtNome.getText().isEmpty() == false) {
-            List lista = (List) usuariosDAO.listApelido(jTxtCriador.getText());
-       controllerUsuarios.setList(lista);
+            List lista = (List) clientesDAO.listApelido(jTxtCriador.getText());
+       controllerClientes.setList(lista);
         }
     }//GEN-LAST:event_jBtnConsultaActionPerformed
 
@@ -199,83 +199,20 @@ public class JDlgConsultasUsuarios extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JDlgConsultasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgConsultasClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JDlgConsultasUsuarios dialog = new JDlgConsultasUsuarios(new javax.swing.JFrame(), true);
+                JDlgConsultasClientes dialog = new JDlgConsultasClientes(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

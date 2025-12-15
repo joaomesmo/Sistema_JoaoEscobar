@@ -52,6 +52,7 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMnuVendas = new javax.swing.JMenuItem();
         jMnuVendasProdutos = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,11 +109,19 @@ public class JFrmMenu extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fundo2.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
+        jMenuBar1.setForeground(new java.awt.Color(0, 0, 0));
         jMenuBar1.setToolTipText("");
 
+        jMenu1.setBackground(new java.awt.Color(0, 0, 0));
+        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
         jMenu1.setText("Telas");
+        jMenu1.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
 
         jMnuUsuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        jMnuUsuarios.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuUsuarios.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         jMnuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/do-utilizador.png"))); // NOI18N
         jMnuUsuarios.setText("Usuarios");
         jMnuUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -123,6 +132,9 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenu1.add(jMnuUsuarios);
 
         jMnuClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        jMnuClientes.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuClientes.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuClientes.setForeground(new java.awt.Color(255, 255, 255));
         jMnuClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/usuarios-alt.png"))); // NOI18N
         jMnuClientes.setText("Clientes");
         jMnuClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +145,9 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenu1.add(jMnuClientes);
 
         jMnuHQs.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
+        jMnuHQs.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuHQs.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuHQs.setForeground(new java.awt.Color(255, 255, 255));
         jMnuHQs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/livros.png"))); // NOI18N
         jMnuHQs.setText("HQs");
         jMnuHQs.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +158,9 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenu1.add(jMnuHQs);
 
         jMnuProdutoras.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
+        jMnuProdutoras.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuProdutoras.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuProdutoras.setForeground(new java.awt.Color(255, 255, 255));
         jMnuProdutoras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/banco.png"))); // NOI18N
         jMnuProdutoras.setText("Produtoras");
         jMnuProdutoras.addActionListener(new java.awt.event.ActionListener() {
@@ -151,9 +169,14 @@ public class JFrmMenu extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMnuProdutoras);
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jMenu1.add(jSeparator1);
 
         jMnuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
+        jMnuSair.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuSair.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuSair.setForeground(new java.awt.Color(255, 255, 255));
         jMnuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/circulo-cruzado.png"))); // NOI18N
         jMnuSair.setText("Sair");
         jMnuSair.addActionListener(new java.awt.event.ActionListener() {
@@ -165,9 +188,15 @@ public class JFrmMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBackground(new java.awt.Color(0, 0, 0));
+        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
         jMenu2.setText("Telas (dnv)");
+        jMenu2.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
 
         jMnuVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
+        jMnuVendas.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuVendas.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuVendas.setForeground(new java.awt.Color(255, 255, 255));
         jMnuVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aperto-de-mao.png"))); // NOI18N
         jMnuVendas.setText("Vendas");
         jMnuVendas.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +207,9 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenu2.add(jMnuVendas);
 
         jMnuVendasProdutos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.ALT_MASK));
+        jMnuVendasProdutos.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuVendasProdutos.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuVendasProdutos.setForeground(new java.awt.Color(255, 255, 255));
         jMnuVendasProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dolar.png"))); // NOI18N
         jMnuVendasProdutos.setText("Vendas  Produtos");
         jMnuVendasProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +221,18 @@ public class JFrmMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBackground(new java.awt.Color(0, 0, 0));
+        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
         jMenu3.setText("Consultas");
+        jMenu3.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+
+        jMenuItem1.setBackground(new java.awt.Color(0, 0, 0));
+        jMenuItem1.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMenuItem1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/do-utilizador.png"))); // NOI18N
+        jMenuItem1.setText("Usuarios");
+        jMenu3.add(jMenuItem1);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -296,6 +339,7 @@ public class JFrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMnuClientes;
     private javax.swing.JMenuItem jMnuHQs;
     private javax.swing.JMenuItem jMnuProdutoras;
