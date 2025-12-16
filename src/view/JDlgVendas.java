@@ -86,7 +86,6 @@ public class JDlgVendas extends javax.swing.JDialog {
         jCboClientes.setSelectedItem(jceVendas.getJceClientes());
         jCboClientes.setSelectedItem(jceVendas.getJceIdvendas());
         VendasProdutosDAO vendasProdutosDAO = new VendasProdutosDAO();
-        List lista;
         lista = (List) vendasProdutosDAO.listProdutos(jceVendas);
         controllerVendasProdutos.setList(lista);
     }
@@ -148,11 +147,17 @@ public class JDlgVendas extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jBtnExcluir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lixo.png"))); // NOI18N
+        jBtnExcluir2.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnExcluir2.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnExcluir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lixo2.png"))); // NOI18N
 
-        jBtnAlterar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapis.png"))); // NOI18N
+        jBtnAlterar2.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnAlterar2.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnAlterar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapis2.png"))); // NOI18N
 
-        jBtnIncluir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/download.png"))); // NOI18N
+        jBtnIncluir2.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnIncluir2.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnIncluir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/download2.png"))); // NOI18N
 
         jFmtTotal.setBackground(new java.awt.Color(0, 0, 0));
         jFmtTotal.setForeground(new java.awt.Color(255, 255, 255));
@@ -328,12 +333,13 @@ public class JDlgVendas extends javax.swing.JDialog {
                     .addComponent(jLabel5)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCboPublicadoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFmtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCboClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCboClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTxtPedido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jCboPublicadoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jFmtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)

@@ -6,6 +6,10 @@ package view;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import viewConsultas.JDlgConsultasUsuarios;
+import viewConsultas.JDlgConsultasClientes;
+import viewConsultas.JDlgConsultasHQs;
+import viewConsultas.JDlgConsultasVendas;
 
 /**
  *
@@ -32,6 +36,12 @@ public class JFrmMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jToolBar2 = new javax.swing.JToolBar();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -52,11 +62,81 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMnuVendas = new javax.swing.JMenuItem();
         jMnuVendasProdutos = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMnuCUsuarios = new javax.swing.JMenuItem();
+        jMnuCClientes = new javax.swing.JMenuItem();
+        jMnuChqs = new javax.swing.JMenuItem();
+        jMnuCVendas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Telas de Cadastros");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 830, -1, 30));
+
+        jToolBar2.setBackground(new java.awt.Color(0, 0, 0));
+        jToolBar2.setRollover(true);
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/do-utilizador.png"))); // NOI18N
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setMaximumSize(new java.awt.Dimension(30, 30));
+        jButton4.setMinimumSize(new java.awt.Dimension(30, 30));
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(jButton4);
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/usuarios-alt.png"))); // NOI18N
+        jButton5.setFocusable(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setMaximumSize(new java.awt.Dimension(30, 30));
+        jButton5.setMinimumSize(new java.awt.Dimension(30, 30));
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(jButton5);
+
+        jButton7.setBackground(new java.awt.Color(0, 0, 0));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/livros.png"))); // NOI18N
+        jButton7.setFocusable(false);
+        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton7.setMaximumSize(new java.awt.Dimension(30, 30));
+        jButton7.setMinimumSize(new java.awt.Dimension(30, 30));
+        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(jButton7);
+
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aperto-de-mao.png"))); // NOI18N
+        jButton6.setFocusable(false);
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6.setMaximumSize(new java.awt.Dimension(30, 30));
+        jButton6.setMinimumSize(new java.awt.Dimension(30, 30));
+        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(jButton6);
+
+        jPanel1.add(jToolBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 860, 140, 34));
 
         jToolBar1.setBackground(new java.awt.Color(0, 0, 0));
         jToolBar1.setRollover(true);
@@ -69,6 +149,11 @@ public class JFrmMenu extends javax.swing.JFrame {
         jButton1.setMaximumSize(new java.awt.Dimension(30, 30));
         jButton1.setMinimumSize(new java.awt.Dimension(30, 30));
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton1);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
@@ -78,6 +163,11 @@ public class JFrmMenu extends javax.swing.JFrame {
         jButton2.setMaximumSize(new java.awt.Dimension(30, 30));
         jButton2.setMinimumSize(new java.awt.Dimension(30, 30));
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton2);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
@@ -87,14 +177,19 @@ public class JFrmMenu extends javax.swing.JFrame {
         jButton3.setMaximumSize(new java.awt.Dimension(30, 30));
         jButton3.setMinimumSize(new java.awt.Dimension(30, 30));
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton3);
 
         jPanel1.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 860, 120, 40));
 
         jLabel4.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Telas de Cadastros");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 830, -1, -1));
+        jLabel4.setText("Telas de Consultas");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 820, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Papyrus", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
@@ -226,12 +321,53 @@ public class JFrmMenu extends javax.swing.JFrame {
         jMenu3.setText("Consultas");
         jMenu3.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
 
-        jMenuItem1.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItem1.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
-        jMenuItem1.setForeground(new java.awt.Color(255, 255, 255));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/do-utilizador.png"))); // NOI18N
-        jMenuItem1.setText("Usuarios");
-        jMenu3.add(jMenuItem1);
+        jMnuCUsuarios.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuCUsuarios.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuCUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        jMnuCUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/do-utilizador.png"))); // NOI18N
+        jMnuCUsuarios.setText("Usuarios");
+        jMnuCUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuCUsuariosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMnuCUsuarios);
+
+        jMnuCClientes.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuCClientes.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuCClientes.setForeground(new java.awt.Color(255, 255, 255));
+        jMnuCClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/usuarios-alt.png"))); // NOI18N
+        jMnuCClientes.setText("Clientes");
+        jMnuCClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuCClientesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMnuCClientes);
+
+        jMnuChqs.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuChqs.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuChqs.setForeground(new java.awt.Color(255, 255, 255));
+        jMnuChqs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/livros.png"))); // NOI18N
+        jMnuChqs.setText("HQs");
+        jMnuChqs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuChqsActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMnuChqs);
+
+        jMnuCVendas.setBackground(new java.awt.Color(0, 0, 0));
+        jMnuCVendas.setFont(new java.awt.Font("Papyrus", 1, 12)); // NOI18N
+        jMnuCVendas.setForeground(new java.awt.Color(255, 255, 255));
+        jMnuCVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aperto-de-mao.png"))); // NOI18N
+        jMnuCVendas.setText("Vendas");
+        jMnuCVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuCVendasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMnuCVendas);
 
         jMenuBar1.add(jMenu3);
 
@@ -292,6 +428,65 @@ public class JFrmMenu extends javax.swing.JFrame {
        jDlgVendasProdutos.setVisible(true);
     }//GEN-LAST:event_jMnuVendasProdutosActionPerformed
 
+    private void jMnuCUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCUsuariosActionPerformed
+        // TODO add your handling code here:
+        JDlgConsultasUsuarios jDlgConsultasUsuarios = new JDlgConsultasUsuarios(null, true);
+       jDlgConsultasUsuarios.setVisible(true);
+    }//GEN-LAST:event_jMnuCUsuariosActionPerformed
+
+    private void jMnuCClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCClientesActionPerformed
+        // TODO add your handling code here:
+        JDlgConsultasClientes jDlgConsultasClientes = new JDlgConsultasClientes(null, true);
+       jDlgConsultasClientes.setVisible(true);
+    }//GEN-LAST:event_jMnuCClientesActionPerformed
+
+    private void jMnuChqsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuChqsActionPerformed
+        // TODO add your handling code here:
+        JDlgConsultasHQs jDlgConsultasHQs = new JDlgConsultasHQs(null, true);
+       jDlgConsultasHQs.setVisible(true);
+    }//GEN-LAST:event_jMnuChqsActionPerformed
+
+    private void jMnuCVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCVendasActionPerformed
+        // TODO add your handling code here:
+        JDlgConsultasVendas jDlgConsultasVendas = new JDlgConsultasVendas(null, true);
+       jDlgConsultasVendas.setVisible(true);
+    }//GEN-LAST:event_jMnuCVendasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jMnuUsuariosActionPerformed(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        jMnuHQsActionPerformed(null);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        jMnuProdutorasActionPerformed(null);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        jMnuCUsuariosActionPerformed(null);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        jMnuCClientesActionPerformed(null);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        jMnuChqsActionPerformed(null);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        jMnuCVendasActionPerformed(null);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -331,15 +526,23 @@ public class JFrmMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMnuCClientes;
+    private javax.swing.JMenuItem jMnuCUsuarios;
+    private javax.swing.JMenuItem jMnuCVendas;
+    private javax.swing.JMenuItem jMnuChqs;
     private javax.swing.JMenuItem jMnuClientes;
     private javax.swing.JMenuItem jMnuHQs;
     private javax.swing.JMenuItem jMnuProdutoras;
@@ -350,5 +553,6 @@ public class JFrmMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBar2;
     // End of variables declaration//GEN-END:variables
 }
