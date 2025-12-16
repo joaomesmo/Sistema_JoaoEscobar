@@ -1,5 +1,5 @@
 package bean;
-// Generated 16/12/2025 11:40:33 by Hibernate Tools 4.3.1
+// Generated 16/12/2025 12:58:38 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -32,19 +32,21 @@ public class JceHqs  implements java.io.Serializable {
      private String jceCriador;
      private String jcePublicadora;
      private String jceTags;
+     private double jcePreco;
 
     public JceHqs() {
     }
 
 	
-    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceCriador, String jcePublicadora) {
+    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceCriador, String jcePublicadora, double jcePreco) {
         this.jceIdhqs = jceIdhqs;
         this.jceNome = jceNome;
         this.jceCapitulos = jceCapitulos;
         this.jceCriador = jceCriador;
         this.jcePublicadora = jcePublicadora;
+        this.jcePreco = jcePreco;
     }
-    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags) {
+    public JceHqs(int jceIdhqs, String jceNome, int jceCapitulos, String jceGenero, Date jceLancamento, String jceCriador, String jcePublicadora, String jceTags, double jcePreco) {
        this.jceIdhqs = jceIdhqs;
        this.jceNome = jceNome;
        this.jceCapitulos = jceCapitulos;
@@ -53,6 +55,7 @@ public class JceHqs  implements java.io.Serializable {
        this.jceCriador = jceCriador;
        this.jcePublicadora = jcePublicadora;
        this.jceTags = jceTags;
+       this.jcePreco = jcePreco;
     }
    
      @Id 
@@ -135,5 +138,15 @@ public class JceHqs  implements java.io.Serializable {
     
     public void setJceTags(String jceTags) {
         this.jceTags = jceTags;
+    }
+
+    
+    @Column(name="jce_preco", nullable=false, precision=7)
+    public double getJcePreco() {
+        return this.jcePreco;
+    }
+    
+    public void setJcePreco(double jcePreco) {
+        this.jcePreco = jcePreco;
     }
 }

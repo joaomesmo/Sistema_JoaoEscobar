@@ -1,5 +1,5 @@
 package bean;
-// Generated 16/12/2025 11:40:33 by Hibernate Tools 4.3.1
+// Generated 16/12/2025 12:58:38 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -28,7 +28,7 @@ public class JceUsuarios  implements java.io.Serializable {
      private String jceCpf;
      private Date jceDataNascimento;
      private String jceSenha;
-     private int jceNivel;
+     private Integer jceNivel;
      private String jceAtivo;
 
     public JceUsuarios() {
@@ -42,7 +42,7 @@ public class JceUsuarios  implements java.io.Serializable {
         this.jceCpf = jceCpf;
         this.jceSenha = jceSenha;
     }
-    public JceUsuarios(int jceIdusuarios, String jceNome, String jceApelido, String jceCpf, Date jceDataNascimento, String jceSenha, int jceNivel, String jceAtivo) {
+    public JceUsuarios(int jceIdusuarios, String jceNome, String jceApelido, String jceCpf, Date jceDataNascimento, String jceSenha, Integer jceNivel, String jceAtivo) {
        this.jceIdusuarios = jceIdusuarios;
        this.jceNome = jceNome;
        this.jceApelido = jceApelido;
@@ -117,11 +117,11 @@ public class JceUsuarios  implements java.io.Serializable {
 
     
     @Column(name="jce_nivel")
-    public int getJceNivel() {
+    public Integer getJceNivel() {
         return this.jceNivel;
     }
     
-    public void setJceNivel(int jceNivel) {
+    public void setJceNivel(Integer jceNivel) {
         this.jceNivel = jceNivel;
     }
 

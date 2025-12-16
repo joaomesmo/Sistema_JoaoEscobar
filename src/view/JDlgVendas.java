@@ -347,11 +347,11 @@ public class JDlgVendas extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCboClientes, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jFmtData, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jCboPublicadoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jFmtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jFmtData)))
+                        .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -390,6 +390,8 @@ public class JDlgVendas extends javax.swing.JDialog {
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
+        incluir = false;
+        
         Util.habilitar(true, jTxtCodigo, jFmtData, jCboClientes,  jCboPublicadoras, jFmtTotal,
             jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2,
             jBtnConfirmar,jBtnCancelar, jBtnExcluir);
@@ -399,7 +401,9 @@ public class JDlgVendas extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(true, jTxtCodigo, jFmtData, jCboClientes,  jCboPublicadoras, jFmtTotal,
+        incluir = true;
+        
+        Util.habilitar(true, jFmtData, jCboClientes,  jCboPublicadoras, jFmtTotal,
             jBtnIncluir2,  jBtnAlterar2,  jBtnExcluir2,
             jBtnConfirmar,jBtnCancelar, jBtnExcluir);
         Util.habilitar(false,jBtnIncluir, jBtnAlterar);
@@ -409,7 +413,7 @@ public class JDlgVendas extends javax.swing.JDialog {
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
         JDlgVendasPesquisar jDlgVendasPesquisar = new JDlgVendasPesquisar(null, true);
-        jDlgVendasPesquisar.setTelaPai(this);
+        jDlgVendasPesquisar.setTelaAnterior(this);
         jDlgVendasPesquisar.setVisible(true);
         Util.mensagem("omagah");
     }//GEN-LAST:event_jBtnPesquisarActionPerformed

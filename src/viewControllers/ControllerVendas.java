@@ -4,6 +4,7 @@
  */
 package viewControllers;
 
+import bean.JceVendas;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -19,8 +20,8 @@ public class ControllerVendas extends AbstractTableModel {
         this.lista = lista;
     }
 
-    public Object getBean(int rowIndex) {
-       return lista.get(rowIndex);    
+    public JceVendas getBean(int rowIndex) {
+       return (JceVendas) lista.get(rowIndex);  
     }
     
     @Override
@@ -35,6 +36,16 @@ public class ControllerVendas extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        JceVendas jceVendas = (JceVendas) lista.get( rowIndex);
+        if ( columnIndex == 0 ){
+            return jceVendas.getJceIdvendas();
+        } else if (columnIndex ==1) {
+            return jceVendas.getJceData();        
+        } else if (columnIndex ==2) {
+            return jceVendas.getJceTotal();
+        } else if (columnIndex ==3) {
+            return jceVendas.getJceClientes().getJceNome();
+        }
         return "";
     }
 
@@ -44,13 +55,13 @@ public class ControllerVendas extends AbstractTableModel {
             return "Código";
         }
         if (column == 1) {
-            return "Numero do pedido";
+            return "Data da venda";
         }
         if (column == 2) {
-            return "Clientes";
+            return "Total";
         }
         if (column == 3) {
-            return "Produtoras";
+            return "Clientes";
         }
         return "";
     }

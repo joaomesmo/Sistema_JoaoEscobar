@@ -496,7 +496,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         // TODO add your handling code here:
         incluir = false;
         
-        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
+        Util.habilitar(true, jTxtNome, jTxtApelido, jFmtDatanasc,
             jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false, jBtnIncluir, jBtnAlterar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed

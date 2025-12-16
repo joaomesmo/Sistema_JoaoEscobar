@@ -1,5 +1,5 @@
 package bean;
-// Generated 16/12/2025 11:40:33 by Hibernate Tools 4.3.1
+// Generated 16/12/2025 12:58:38 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -49,7 +49,7 @@ public class JceClientes  implements java.io.Serializable {
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JceClientes(int jceIdclientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, int jceStatus, int jceGenero, String jceCep) {
+    public JceClientes(int jceIdclientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio) {
        this.jceIdclientes = jceIdclientes;
        this.jceNome = jceNome;
        this.jceApelido = jceApelido;

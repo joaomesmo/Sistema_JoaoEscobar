@@ -118,11 +118,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jCboClientes" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jFmtData" alignment="1" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jCboPublicadoras" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jFmtTotal" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTxtCodigo" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jFmtData" alignment="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -268,6 +268,7 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;JcePublicadoras&gt;()"/>
+            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="JDlgVendas_jCboPublicadoras"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;JcePublicadoras&gt;"/>
           </AuxValues>
         </Component>
