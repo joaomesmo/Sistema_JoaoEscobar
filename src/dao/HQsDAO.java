@@ -52,7 +52,7 @@ public class HQsDAO extends DAOAbstract {
     
     public Object listNome(String nome) {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(HQsDAO.class);
+        Criteria criteria = session.createCriteria(JceHqs.class);
         criteria.add(Restrictions.like("jceNome", "%"+"%"));
         List lista = criteria.list();
         session.getTransaction().commit();
@@ -61,7 +61,7 @@ public class HQsDAO extends DAOAbstract {
     
     public Object listCriador(String nome) {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(HQsDAO.class);
+        Criteria criteria = session.createCriteria(JceHqs.class);
         criteria.add(Restrictions.like("jceCriador", "%"+"%"));
         List lista = criteria.list();
         session.getTransaction().commit();
@@ -70,7 +70,7 @@ public class HQsDAO extends DAOAbstract {
     
     public Object listNomeCriador(String nome, double valorUnitario) {
         session.beginTransaction();
-        Criteria criteria = session.createCriteria(HQsDAO.class);
+        Criteria criteria = session.createCriteria(JceHqs.class);
         criteria.add(Restrictions.like("jceNome", "%"+"%"));
         criteria.add(Restrictions.like("jceCriador", "%"+"%"));
         List lista = criteria.list();

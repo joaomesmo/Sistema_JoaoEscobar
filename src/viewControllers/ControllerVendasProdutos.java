@@ -48,7 +48,7 @@ public class ControllerVendasProdutos extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         JceVendasProdutos jceVendasProdutos = (JceVendasProdutos) lstPedProd.get(rowIndex);
         if (columnIndex == 0) {
-            return jceVendasProdutos.getIdjceVendasProdutos();
+            return jceVendasProdutos.getJceIdvendasProdutos();
         } else if (columnIndex == 1) {
             return jceVendasProdutos.getJceHqs();
         } else if (columnIndex == 2) {

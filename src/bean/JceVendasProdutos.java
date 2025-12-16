@@ -1,5 +1,5 @@
 package bean;
-// Generated 12/12/2025 17:07:27 by Hibernate Tools 4.3.1
+// Generated 16/12/2025 11:40:33 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -20,21 +20,21 @@ import javax.persistence.Table;
 public class JceVendasProdutos  implements java.io.Serializable {
 
 
-     private int idjceVendasProdutos;
+     private int jceIdvendasProdutos;
      private JceHqs jceHqs;
      private JcePublicadoras jcePublicadoras;
-     private Integer jceQuantidade;
+     private int jceQuantidade;
      private double jceValorUnitario;
 
     public JceVendasProdutos() {
     }
 
 	
-    public JceVendasProdutos(int idjceVendasProdutos) {
-        this.idjceVendasProdutos = idjceVendasProdutos;
+    public JceVendasProdutos(int jceIdvendasProdutos) {
+        this.jceIdvendasProdutos = jceIdvendasProdutos;
     }
-    public JceVendasProdutos(int idjceVendasProdutos, JceHqs jceHqs, JcePublicadoras jcePublicadoras, Integer jceQuantidade, double jceValorUnitario) {
-       this.idjceVendasProdutos = idjceVendasProdutos;
+    public JceVendasProdutos(int jceIdvendasProdutos, JceHqs jceHqs, JcePublicadoras jcePublicadoras, int jceQuantidade, double jceValorUnitario) {
+       this.jceIdvendasProdutos = jceIdvendasProdutos;
        this.jceHqs = jceHqs;
        this.jcePublicadoras = jcePublicadoras;
        this.jceQuantidade = jceQuantidade;
@@ -44,13 +44,13 @@ public class JceVendasProdutos  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idjce_vendasProdutos", unique=true, nullable=false)
-    public int getIdjceVendasProdutos() {
-        return this.idjceVendasProdutos;
+    @Column(name="jce_idvendasProdutos", unique=true, nullable=false)
+    public int getJceIdvendasProdutos() {
+        return this.jceIdvendasProdutos;
     }
     
-    public void setIdjceVendasProdutos(int idjceVendasProdutos) {
-        this.idjceVendasProdutos = idjceVendasProdutos;
+    public void setJceIdvendasProdutos(int jceIdvendasProdutos) {
+        this.jceIdvendasProdutos = jceIdvendasProdutos;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -75,11 +75,11 @@ public class JceVendasProdutos  implements java.io.Serializable {
 
     
     @Column(name="jce_quantidade")
-    public Integer getJceQuantidade() {
+    public int getJceQuantidade() {
         return this.jceQuantidade;
     }
     
-    public void setJceQuantidade(Integer jceQuantidade) {
+    public void setJceQuantidade(int jceQuantidade) {
         this.jceQuantidade = jceQuantidade;
     }
 

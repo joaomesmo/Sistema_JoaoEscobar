@@ -35,7 +35,6 @@ public class JFrmLogin extends javax.swing.JFrame {
         JceUsuarios jceUsuarios = new JceUsuarios();
         jceUsuarios.setJceNome(nome);
         jceUsuarios.setJceSenha(senha);
-        
         return jceUsuarios;
     }
 
@@ -150,9 +149,6 @@ public class JFrmLogin extends javax.swing.JFrame {
 
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
         // TODO add your handling code here:
-        JceUsuarios jceUsuarios = viewBean();
-        UsuariosDAO usuariosDAO = new UsuariosDAO();
-        
         if(jTxtUsuario.getText().equals("joao") && jPswSenha.getText().equals("sim")){
             JFrmMenu jFrmMenu = new JFrmMenu();
             jFrmMenu.setVisible(true); this.setVisible(false);

@@ -44,7 +44,7 @@ public class VendasProdutosDAO extends DAOAbstract {
     public Object list(int codigo) {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(JceVendasProdutos.class);
-        criteria.add(Restrictions.eq("idVendasProdutos", codigo));
+        criteria.add(Restrictions.eq("jce_idVendasProdutos", codigo));
         List lista = criteria.list();
         session.getTransaction().commit();
         return lista;

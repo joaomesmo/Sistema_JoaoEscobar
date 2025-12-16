@@ -81,7 +81,7 @@ public class JDlgConsultasVendas extends javax.swing.JDialog {
 
         jLabel1.setText("Nome HQ");
 
-        jLabel2.setText("Nome Criador");
+        jLabel2.setText("Nome do criador");
 
         jBtnConsulta.setText("Conusultar");
         jBtnConsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -162,19 +162,18 @@ public class JDlgConsultasVendas extends javax.swing.JDialog {
 
     private void jBtnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultaActionPerformed
         // TODO add your handling code here:
-        if ((jTxtNome.getText().isEmpty() == false)
-                && (jTxtCriador.getText().isEmpty() == false)){
-        List lista = (List) hqsDAO.listNomeCriador(jTxtNome.getText(),
-                Util.strToDouble(jTxtCriador.getText()));
+        if ((jTxtNome.getText().isEmpty() == false) && (jTxtCriador.getText().isEmpty() == false)){
+        List lista = (List) hqsDAO.listNomeCriador(jTxtNome.getText(), Util.strToDouble(jTxtCriador.getText()));
         }
         
         if (jTxtNome.getText().isEmpty() == false) {
             List lista = (List) hqsDAO.listNome(jTxtNome.getText());
        controllerHQs.setList(lista);
-        } else if (jTxtNome.getText().isEmpty() == false) {
+       
+        } else if (jTxtCriador.getText().isEmpty() == false) {
             List lista = (List) hqsDAO.listCriador(jTxtCriador.getText());
        controllerHQs.setList(lista);
-        }
+    }
     }//GEN-LAST:event_jBtnConsultaActionPerformed
 
     private void jBtnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnImprimirActionPerformed
@@ -207,68 +206,6 @@ public class JDlgConsultasVendas extends javax.swing.JDialog {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JDlgConsultasVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

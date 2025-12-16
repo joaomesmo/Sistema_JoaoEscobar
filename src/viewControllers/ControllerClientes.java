@@ -36,7 +36,7 @@ public class ControllerClientes extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         JceClientes jceClientes = (JceClientes) lista.get( rowIndex);
         if ( columnIndex == 0 ){
-            return jceClientes.getIdjceClientes();
+            return jceClientes.getJceIdclientes();
         } else if (columnIndex ==1) {
             return jceClientes.getJceNome();        
         } else if (columnIndex ==2) {

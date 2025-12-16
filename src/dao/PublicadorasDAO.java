@@ -44,7 +44,7 @@ public class PublicadorasDAO extends DAOAbstract{
     public Object list(int codigo) {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(JcePublicadoras.class);
-        criteria.add(Restrictions.eq("idpublicadoras", codigo));
+        criteria.add(Restrictions.eq("jce_idpublicadoras", codigo));
         List lista = criteria.list();
         session.getTransaction().commit();
         return lista;

@@ -41,8 +41,8 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         }
         
            Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPswSenha, jFmtCPF, jFmtDatanasc,
-               jCboNivel,  jChbAtivo,  jBtnExcluir, jBtnConfirmar,jBtnCancelar);
-        Util.habilitar(true,jBtnIncluir, jBtnAlterar,  jBtnPesquisar);
+               jCboNivel,  jChbAtivo,  jBtnExcluir, jBtnConfirmar, jBtnAlterar, jBtnCancelar);
+        Util.habilitar(true,jBtnIncluir, jBtnPesquisar);
     }
     
     public JceUsuarios viewBean() {
@@ -414,6 +414,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         JDlgUsuariosPesquisar jDlgUsuariosPesquisar = new JDlgUsuariosPesquisar(null, true);
         jDlgUsuariosPesquisar.setTelaAnterior(this);
         jDlgUsuariosPesquisar.setVisible(true);
+        
         Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCPF, jFmtDatanasc,
             jPswSenha, jCboNivel, jChbAtivo, jBtnAlterar, jBtnCancelar, jBtnExcluir );
         Util.habilitar(false,jBtnIncluir,jBtnConfirmar,  jBtnPesquisar);

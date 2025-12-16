@@ -1,5 +1,5 @@
 package bean;
-// Generated 12/12/2025 17:07:27 by Hibernate Tools 4.3.1
+// Generated 16/12/2025 11:40:33 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -24,7 +24,7 @@ import javax.persistence.TemporalType;
 public class JceClientes  implements java.io.Serializable {
 
 
-     private int idjceClientes;
+     private int jceIdclientes;
      private String jceNome;
      private String jceApelido;
      private String jceEmail;
@@ -41,16 +41,16 @@ public class JceClientes  implements java.io.Serializable {
     }
 
 	
-    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, String jceTelefone) {
-        this.idjceClientes = idjceClientes;
+    public JceClientes(int jceIdclientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, String jceTelefone) {
+        this.jceIdclientes = jceIdclientes;
         this.jceNome = jceNome;
         this.jceApelido = jceApelido;
         this.jceEmail = jceEmail;
         this.jceSenha = jceSenha;
         this.jceTelefone = jceTelefone;
     }
-    public JceClientes(int idjceClientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, int jceStatus, int jceGenero, String jceCep) {
-       this.idjceClientes = idjceClientes;
+    public JceClientes(int jceIdclientes, String jceNome, String jceApelido, String jceEmail, String jceSenha, Date jceData, String jceTelefone, String jceLocalizacao, String jceBio, int jceStatus, int jceGenero, String jceCep) {
+       this.jceIdclientes = jceIdclientes;
        this.jceNome = jceNome;
        this.jceApelido = jceApelido;
        this.jceEmail = jceEmail;
@@ -67,13 +67,13 @@ public class JceClientes  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idjce_clientes", unique=true, nullable=false)
-    public int getIdjceClientes() {
-        return this.idjceClientes;
+    @Column(name="jce_idclientes", unique=true, nullable=false)
+    public int getJceIdclientes() {
+        return this.jceIdclientes;
     }
     
-    public void setIdjceClientes(int idjceClientes) {
-        this.idjceClientes = idjceClientes;
+    public void setJceIdclientes(int jceIdclientes) {
+        this.jceIdclientes = jceIdclientes;
     }
 
     
@@ -127,7 +127,7 @@ public class JceClientes  implements java.io.Serializable {
     }
 
     
-    @Column(name="jce_telefone", nullable=false, length=10)
+    @Column(name="jce_telefone", nullable=false, length=14)
     public String getJceTelefone() {
         return this.jceTelefone;
     }
@@ -186,5 +186,3 @@ public class JceClientes  implements java.io.Serializable {
         this.jceCep = jceCep;
     }
 }
-
-

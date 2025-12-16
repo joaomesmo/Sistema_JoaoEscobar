@@ -1,5 +1,5 @@
 package bean;
-// Generated 12/12/2025 17:07:27 by Hibernate Tools 4.3.1
+// Generated 16/12/2025 11:40:33 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -137,5 +137,3 @@ public class JceHqs  implements java.io.Serializable {
         this.jceTags = jceTags;
     }
 }
-
-

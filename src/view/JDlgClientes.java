@@ -50,7 +50,7 @@ public class JDlgClientes extends javax.swing.JDialog {
     public JceClientes viewBean() {
         JceClientes jceClientes = new JceClientes();
         int codigo = Util.strToInt(jTxtCodigo.getText());
-        jceClientes.setIdjceClientes(codigo);
+        jceClientes.setJceIdclientes(codigo);
         jceClientes.setJceNome(jTxtNome.getText());
         jceClientes.setJceApelido(jTxtApelido.getText());
         jceClientes.setJceEmail(jFmtEmail.getText());
@@ -66,7 +66,7 @@ public class JDlgClientes extends javax.swing.JDialog {
     }
 
         public void beanView(JceClientes jceClientes) {
-        jTxtCodigo.setText(Util.intToStr(jceClientes.getIdjceClientes()));
+        jTxtCodigo.setText(Util.intToStr(jceClientes.getJceIdclientes()));
         jTxtNome.setText(jceClientes.getJceNome());
         jTxtApelido.setText(jceClientes.getJceApelido());
         jFmtEmail.setText(jceClientes.getJceEmail());
@@ -261,6 +261,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jFmtTelefone.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
 
         jTxtApelido.setBackground(new java.awt.Color(0, 0, 0));
+        jTxtApelido.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
         jTxtApelido.setForeground(new java.awt.Color(255, 255, 255));
         jTxtApelido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
@@ -377,7 +378,7 @@ public class JDlgClientes extends javax.swing.JDialog {
                         .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel21)
@@ -493,13 +494,17 @@ public class JDlgClientes extends javax.swing.JDialog {
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
-            jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus,jBtnIncluir, jBtnAlterar);
-        Util.habilitar(true,jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
+        incluir = false;
+        
+        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
+            jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtCep,jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnExcluir, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
+        Util.habilitar(false, jBtnIncluir, jBtnAlterar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
+        incluir = true;
+        
         Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtDatanasc,
             jPwfSenha, jFmtTelefone,  jFmtLocalizacao, jFmtCep, jTxtBio,jFmtEmail, jCboGenero, jCboStatus, jBtnConfirmar,jBtnCancelar, jBtnPesquisar);
         Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir);
@@ -508,8 +513,11 @@ public class JDlgClientes extends javax.swing.JDialog {
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
         JDlgClientesPesquisar jDlgClientesPesquisar = new JDlgClientesPesquisar(null, true);
-        jDlgClientesPesquisar.setTelaPai(this);
+        jDlgClientesPesquisar.setTelaAnterior(this);
         jDlgClientesPesquisar.setVisible(true);
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido,  jPwfSenha, jFmtDatanasc,
+            jFmtTelefone, jFmtEmail, jCboGenero, jCboStatus, jFmtLocalizacao,jFmtCep, jTxtBio, jBtnConfirmar, jBtnIncluir);
+        Util.habilitar(true,jBtnAlterar, jBtnExcluir, jBtnCancelar, jBtnPesquisar);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     /**
