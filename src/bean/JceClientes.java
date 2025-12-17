@@ -185,4 +185,19 @@ public class JceClientes  implements java.io.Serializable {
     public void setJceCep(String jceCep) {
         this.jceCep = jceCep;
     }
+    
+    @Override
+    public String toString() {
+        return this.jceNome;
+    }
+    
+    public boolean equals(Object object) {
+        if (object instanceof JceClientes) {
+            JceClientes jceClientes = (JceClientes) object;
+            if (this.getJceIdclientes()== jceClientes.getJceIdclientes()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

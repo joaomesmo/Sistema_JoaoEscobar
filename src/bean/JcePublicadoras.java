@@ -150,4 +150,19 @@ public class JcePublicadoras  implements java.io.Serializable {
     public void setJceDescricao(String jceDescricao) {
         this.jceDescricao = jceDescricao;
     }
+    
+    @Override
+    public String toString() {
+        return this.jceNome;
+    }
+    
+    public boolean equals(Object object) {
+        if (object instanceof JcePublicadoras) {
+            JcePublicadoras jcePublicadoras = (JcePublicadoras) object;
+            if (this.getJceIdpublicadoras()== jcePublicadoras.getJceIdpublicadoras()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

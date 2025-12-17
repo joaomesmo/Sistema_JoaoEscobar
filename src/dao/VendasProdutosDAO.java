@@ -39,6 +39,20 @@ public class VendasProdutosDAO extends DAOAbstract {
         session.delete(object);
         session.getTransaction().commit();
     }
+    
+    public void deleteProdutos(JceVendas jceVendas) {
+        //listar todos os produtos do pedido
+        List lista = (List) listProdutos(jceVendas);
+        //deleta  a lista acima 
+        session.beginTransaction();
+        for (int i = 0; i < lista.size(); i++) {
+            JceVendasProdutos jceVendasProdutos = (JceVendasProdutos) lista.get(i);
+            //delete(pedidosProdutos);
+            session.flush();
+            session.clear();
+            session.delete(jceVendasProdutos);
+        }
+    }
 
     @Override
     public Object list(int codigo) {
@@ -66,5 +80,10 @@ public class VendasProdutosDAO extends DAOAbstract {
         List lista = criteria.list();
         session.getTransaction().commit();
         return lista;
+    }
+    
+    public static void main(String[] args) {
+        ClientesDAO clientesDAO = new ClientesDAO();
+        clientesDAO.listAll();
     }
 }

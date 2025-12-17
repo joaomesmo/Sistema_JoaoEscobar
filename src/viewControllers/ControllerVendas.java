@@ -12,9 +12,10 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author u07881654104
  */
+
 public class ControllerVendas extends AbstractTableModel {
 
-    List lista;
+    private List lista;
 
     public void setList(List lista) {
         this.lista = lista;

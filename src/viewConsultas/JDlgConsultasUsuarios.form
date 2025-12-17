@@ -35,7 +35,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jTxtCriador" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="jTxtApelido" min="-2" pref="200" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jBtnConsulta" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -65,7 +65,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTxtNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTxtCriador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtApelido" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBtnConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -91,11 +91,11 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+              <Table columnCount="4" rowCount="2">
                 <Column editable="true" title="Title 2" type="java.lang.Object"/>
                 <Column editable="true" title="Title 3" type="java.lang.Object"/>
                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                <Column editable="true" title="T&#xed;tulo 4" type="java.lang.Object"/>
               </Table>
             </Property>
           </Properties>
@@ -115,16 +115,16 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nome HQ"/>
+        <Property name="text" type="java.lang.String" value="Nome do individuo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTxtNome">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTxtCriador">
+    <Component class="javax.swing.JTextField" name="jTxtApelido">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nome Criador"/>
+        <Property name="text" type="java.lang.String" value="Apelido do mano"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jBtnConsulta">

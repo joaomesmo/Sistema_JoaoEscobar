@@ -44,7 +44,7 @@ public class ControllerUsuarios extends AbstractTableModel {
         } else if (columnIndex ==2) {
             return jceUsuarios.getJceApelido();
         } else if (columnIndex ==3) {
-            return jceUsuarios.getJceCpf();
+            return jceUsuarios.getJceDataNascimento();
         }
         return "";
     }
@@ -58,7 +58,7 @@ public class ControllerUsuarios extends AbstractTableModel {
             return "Nome";
         }
         else if (column == 2) {
-            return "Cpf";
+            return "Apelido";
         }
         else if (column == 3) {
             return "Data Nascimento";

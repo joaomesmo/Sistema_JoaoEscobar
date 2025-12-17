@@ -4,6 +4,7 @@
  */
 package view;
 
+import bean.JceVendasProdutos;
 import java.util.List;
 import tools.Util;
 import bean.JceHqs;
@@ -11,7 +12,7 @@ import dao.HQsDAO;
 
 /**
  *
- * @author Caio
+ * @author desgraça pl
  */
 public class JDlgVendasProdutos extends javax.swing.JDialog {
 
@@ -186,6 +187,18 @@ public class JDlgVendasProdutos extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
+        JceVendasProdutos jceVendasProdutos = new JceVendasProdutos();        
+        jceVendasProdutos.setJceHqs((JceHqs) jCboProdutos.getSelectedItem());
+        jceVendasProdutos.setJceQuantidade(Util.strToInt( jTxtQuantidade.getText()) );
+        jceVendasProdutos.setJceValorUnitario(Util.strToDouble( jTxtValor.getText()) );
+        JDlgVendas.controllerVendasProdutos.addBean(jceVendasProdutos);
+        if (incluir == true) {
+           JDlgVendas.controllerJceVendasProdutos.addBean(jceVendasProdutos);
+        } else {
+            JDlgVendas.controllerJceVendasProdutos.removeBean(jDlgPedidos.getjTable1().getSelectedRow());
+            JDlgVendas.controllerJceVendasProdutos.addBean(jceVendasProdutos);
+        }        
+        setVisible(false);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     /**
